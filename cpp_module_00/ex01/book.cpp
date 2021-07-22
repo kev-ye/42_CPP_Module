@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 16:40:50 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/22 20:17:34 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/22 20:26:21 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,16 +98,24 @@ void	Book::search_contact(void) {
 
 	do {
 		tmp.clear();
+
 		std::cout << "To find : ";
 		std::getline(std::cin, tmp);
+		if (std::cin.eof()) {
+			
+			std::cout << std::endl;
+			std::cout << ANSI_RED "Exit !" ANSI_NONE << std::endl;
+			exit(0);
+		}
+	
 		try {
 			index = std::stol(tmp, nullptr, 10);
-			index = strtol(tmp.data(), NULL, 10);
 		}
 		catch (const std::invalid_argument&) {
 			std::cout << ANSI_RED"Wrong index !" ANSI_NONE << std::endl;
 			continue ;
 		}
+	
 		if (index < 1 || index > BOOK_NBR) {
 		
 			std::cout << ANSI_RED"Wrong index !\n" ANSI_NONE << std::endl;

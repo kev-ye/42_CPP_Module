@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/20 15:47:54 by kaye              #+#    #+#              #
-#    Updated: 2021/07/21 18:56:28 by kaye             ###   ########.fr        #
+#    Updated: 2021/07/22 17:36:36 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,10 @@ DIRS			:= $(OBJ_DIR)
 
 # FILES
 
-NAME			:= my_awesome
+NAME			:= book
 SRC				:= main.cpp \
-				   my_awesome.cpp
+				   book.cpp \
+				   contact.cpp
 OBJ				:= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 # COLORS

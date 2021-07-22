@@ -6,24 +6,35 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 17:57:07 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/21 19:17:18 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/22 19:01:05 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "my_awesome.hpp"
-#include "my_awesome.class.hpp"
-
-void	enter_first_name(void)
-{
-	
-}
+#include "book.hpp"
+#include "contact.hpp"
 
 int main(void) {
 
-	std::string name;
+	Book		book;
+	std::string	cmd;
 
-    std::getline (std::cin, name);
-	std::cout << name;
+	do {
 
-    return SUCCESS;
+		book.menu();
+
+		std::getline(std::cin, cmd);
+		if (std::cin.eof() || cmd == "EXIT") {
+			std::cout << ANSI_RED "Exit !" ANSI_NONE << std::endl;
+			break ;
+		}
+
+		else if (cmd == "ADD")
+			book.add_contact();
+		
+		else if (cmd == "SEARCH")
+			book.search_contact();
+
+	} while (true);
+
+	return (0);
 }

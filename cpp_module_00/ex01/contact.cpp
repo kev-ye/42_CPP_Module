@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_awesome.class.hpp                               :+:      :+:    :+:   */
+/*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/21 17:46:00 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/21 18:56:02 by kaye             ###   ########.fr       */
+/*   Created: 2021/07/21 17:34:21 by kaye              #+#    #+#             */
+/*   Updated: 2021/07/22 20:13:14 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MY_AWESOME_CLASS_HPP
-# define MY_AWESOME_CLASS_HPP
+#include "contact.hpp"
 
-#include "my_awesome.hpp"
+Contact::Contact (void) {
+	
+	return ;
+}
 
-class	my_awesome {
+Contact::~Contact (void) {
 
-	public:
-		my_awesome(void);
-		~my_awesome(void);
+	return ;
+}
 
-	// public:
-		
+void	Contact::info_clean(void) {
+	
+	for (int i = 0; i < INFO_NBR; i++)
+		this->info[i].clear();
+}
 
-	// private:
-	// 	t_contact contact[CONTACT_NBR];
-};
+bool	Contact::info_is_empty(void) {
+	
+	for (int i = 0; i < INFO_NBR; i++) {
 
-#endif
+		if (this->info[i].empty() == false)
+			return (false);
+	}
+	return (true);
+}

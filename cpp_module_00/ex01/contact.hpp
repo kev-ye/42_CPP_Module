@@ -1,25 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_awesome.cpp                                     :+:      :+:    :+:   */
+/*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/21 17:34:21 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/21 18:55:16 by kaye             ###   ########.fr       */
+/*   Created: 2021/07/21 17:46:00 by kaye              #+#    #+#             */
+/*   Updated: 2021/07/22 20:13:11 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "my_awesome.hpp"
-#include "my_awesome.class.hpp"
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-my_awesome::my_awesome(void) {
-    std::cout << "constructor called" << std::endl;
-    return ;
-}
+#include <iostream>
+#include <string>
+#include <iomanip>
 
-my_awesome::~my_awesome(void) {
-    std::cout << "destructor called" << std::endl;
-    return ;
-}
+#define INFO_NBR 5
 
+class Contact {
+
+	public:
+		Contact(void);
+		~Contact(void);
+
+	public:
+		enum	e_info {
+				e_FIRST_NAME,
+				e_LAST_NAME,
+				e_NICKNAME,
+				e_PHONE_NBR,
+				e_DARKEST_SECRET
+		};
+		std::string	info[INFO_NBR];
+
+	public:
+		void	info_clean(void);
+		bool	info_is_empty(void);
+};
+
+#endif

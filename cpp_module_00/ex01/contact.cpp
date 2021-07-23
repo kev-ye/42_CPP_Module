@@ -6,11 +6,11 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 17:34:21 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/23 13:12:55 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/23 14:46:24 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#include "contact.hpp"
 
 Contact::Contact (void) {
 	

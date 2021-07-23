@@ -6,14 +6,14 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 16:40:57 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/23 14:36:51 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/23 14:43:01 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BOOK_HPP
 # define BOOK_HPP
 
-#include "Contact.hpp"
+#include "contact.hpp"
 
 #define ANSI_GREEN "\033[1;32m"
 #define ANSI_RED "\033[1;31m"

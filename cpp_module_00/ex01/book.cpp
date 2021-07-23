@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 16:40:50 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/23 14:18:48 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/23 14:33:35 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	Book::_print_search_contact(int index) const {
 	const char *info_name[] = {"First name : ", "Last name : ", "Nickname : ", "Phone number : ", "darkest secret : "};
 
 	for (int i = 0; i < INFO_NBR; i++) {
+
 		std::cout << info_name[i];
 		std::cout << this->_book[index].info[i] << std::endl;
 	}
@@ -78,7 +79,8 @@ void	Book::add_contact(void) {
 
 	std::cout << std::endl;
 
-	++this->_book_i;
+	if (this->_book[this->_book_i].info_is_empty() == false)
+		++this->_book_i;
 	if (this->_book_i >= BOOK_NBR) {
 	
 		this->_book_i = BOOK_NBR - 1;
@@ -92,10 +94,19 @@ void	Book::search_contact(void) const {
 	std::string	tmp;
 	long		index = -1;
 
-	if (this->_book_i == 0) {
-	
-		std::cout << ANSI_RED "Book is empty !\n" ANSI_NONE << std::endl;
-		return ;
+	for (int i = 0; i < BOOK_NBR; i++) {
+		
+		if (this->_book[i].info_is_empty() == true) {
+			
+			if (i == BOOK_NBR - 1) {
+
+				std::cout << ANSI_RED "Book is empty !\n" ANSI_NONE << std::endl;
+				return ;
+			}
+			continue ;
+		}
+		else
+			break ;
 	}
 
 	std::cout << "|----------|----------|----------|----------|" << std::endl;

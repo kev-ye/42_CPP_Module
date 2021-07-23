@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 16:40:50 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/23 14:33:35 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/23 14:39:13 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,9 @@ void	Book::add_contact(void) {
 		++this->_book_i;
 	if (this->_book_i >= BOOK_NBR) {
 	
-		this->_book_i = BOOK_NBR - 1;
+		this->_book_i = 0;
 		std::cout << ANSI_RED"Book is full !\n" ANSI_NONE;
-		std::cout << ANSI_RED"Next contact add will overwite !" ANSI_NONE << std::endl;
+		std::cout << ANSI_RED"Next cmd ADD will overwrite (index -> 0) !" ANSI_NONE << std::endl;
 	}
 }
 

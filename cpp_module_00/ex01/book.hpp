@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 16:40:57 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/23 13:38:50 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/23 14:36:51 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #define ANSI_RED "\033[1;31m"
 #define ANSI_NONE "\033[0m"
 
-#define BOOK_NBR 8
+#define BOOK_NBR 2
 
 class Book {
 		

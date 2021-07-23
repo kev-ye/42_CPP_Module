@@ -6,12 +6,12 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 17:57:07 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/23 14:42:57 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/23 15:44:43 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "book.hpp"
-#include "contact.hpp"
+#include "Book.hpp"
+#include "Contact.hpp"
 
 int main(void) {
 

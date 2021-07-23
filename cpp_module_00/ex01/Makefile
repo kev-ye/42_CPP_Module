@@ -6,14 +6,14 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/20 15:47:54 by kaye              #+#    #+#              #
-#    Updated: 2021/07/23 15:44:49 by kaye             ###   ########.fr        #
+#    Updated: 2021/07/23 15:51:54 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # COMPILATION
 
-CC		= clang++
-CFLAGS 	= -Wall -Wextra -Werror
+CC			= clang++
+CPPFLAGS 	= -Wall -Wextra -Werror
 
 # DIRECTORIES
 
@@ -46,7 +46,7 @@ B_CYAN 			= \033[1;36m
 $(NAME): $(OBJ)
 	@printf "$(CL_LINE)"
 	@echo "[1 / 1] - $(B_MAGENTA)$@$(NONE)"
-	@$(CC) $(CFLAGS) $(OBJ) -o $@
+	@$(CC) $(CPPFLAGS) $(OBJ) -o $@
 	@echo "$(B_GREEN)Compilation done !$(NONE)"
 
 all: $(NAME)
@@ -68,4 +68,4 @@ $(BUILD):
 
 $(OBJ_DIR)/%.o: %.cpp | $(BUILD)
 	@printf "$(CL_LINE)Compiling srcs object : $(B_CYAN)$< $(NONE)...\r"
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CPPFLAGS) -c $< -o $@

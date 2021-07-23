@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 17:46:00 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/22 20:13:11 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/23 13:14:24 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Contact {
 
 	public:
 		void	info_clean(void);
-		bool	info_is_empty(void);
+		bool	info_is_empty(void) const;
 };
 
 #endif

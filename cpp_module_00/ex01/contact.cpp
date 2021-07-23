@@ -6,11 +6,11 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 17:34:21 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/22 20:13:14 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/23 13:12:55 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
+#include "Contact.hpp"
 
 Contact::Contact (void) {
 	
@@ -28,7 +28,7 @@ void	Contact::info_clean(void) {
 		this->info[i].clear();
 }
 
-bool	Contact::info_is_empty(void) {
+bool	Contact::info_is_empty(void) const {
 	
 	for (int i = 0; i < INFO_NBR; i++) {
 

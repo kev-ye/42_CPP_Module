@@ -6,11 +6,11 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 16:40:50 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/22 20:26:21 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/23 14:18:48 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "book.hpp"
+#include "Book.hpp"
 
 Book::Book (void) : _book_i(0) {
 
@@ -22,6 +22,19 @@ Book::~Book (void) {
 	for (int i = 0; i < BOOK_NBR; i++)
 		this->_book[i].info_clean();
 	return ;
+}
+
+void	Book::exit(void) const {
+
+	std::cout << ANSI_RED "Exit !" ANSI_NONE << std::endl;
+	std::exit(EXIT_SUCCESS);
+}
+
+void	Book::_input_value(std::string &value) const {
+
+	std::getline (std::cin, value);
+	if (std::cin.eof() == true)
+		this->exit();
 }
 
 void	Book::_show_search_contact_line(int info, int index) const {
@@ -48,27 +61,33 @@ void	Book::add_contact(void) {
 
 	this->_book[this->_book_i].info_clean();
 
-	std::cout << "Enter the first name : ";
-	std::getline (std::cin, this->_book[this->_book_i].info[Contact::e_FIRST_NAME]);
+	std::cout << std::setw(4) << "" << "-> Enter the first name : ";
+	this->_input_value(this->_book[this->_book_i].info[Contact::e_FIRST_NAME]);
 
-	std::cout << "Enter the last name : ";
-	std::getline (std::cin, this->_book[this->_book_i].info[Contact::e_LAST_NAME]);
+	std::cout << std::setw(4) << "" << "-> Enter the last name : ";
+	this->_input_value(this->_book[this->_book_i].info[Contact::e_LAST_NAME]);
 
-	std::cout << "Enter the nickname : ";
-	std::getline (std::cin, this->_book[this->_book_i].info[Contact::e_NICKNAME]);
+	std::cout << std::setw(4) << "" << "-> Enter the nickname : ";
+	this->_input_value(this->_book[this->_book_i].info[Contact::e_NICKNAME]);
 
-	std::cout << "Enter the phone number : ";
-	std::getline (std::cin, this->_book[this->_book_i].info[Contact::e_PHONE_NBR]);
+	std::cout << std::setw(4) << "" << "-> Enter the phone number : ";
+	this->_input_value(this->_book[this->_book_i].info[Contact::e_PHONE_NBR]);
 
-	std::cout << "Enter the darkest secret : ";
-	std::getline (std::cin, this->_book[this->_book_i].info[Contact::e_DARKEST_SECRET]);
+	std::cout << std::setw(4) << "" << "-> Enter the darkest secret : ";
+	this->_input_value(this->_book[this->_book_i].info[Contact::e_DARKEST_SECRET]);
 
 	std::cout << std::endl;
 
 	++this->_book_i;
+	if (this->_book_i >= BOOK_NBR) {
+	
+		this->_book_i = BOOK_NBR - 1;
+		std::cout << ANSI_RED"Book is full !\n" ANSI_NONE;
+		std::cout << ANSI_RED"Next contact add will overwite !" ANSI_NONE << std::endl;
+	}
 }
 
-void	Book::search_contact(void) {
+void	Book::search_contact(void) const {
 
 	std::string	tmp;
 	long		index = -1;
@@ -83,8 +102,11 @@ void	Book::search_contact(void) {
 	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
 	std::cout << "|----------|----------|----------|----------|" << std::endl;
 
-	for (int i = 0; i < this->_book_i; i++) {
+	for (int i = 0; i < BOOK_NBR; i++) {
 
+		if (this->_book[i].info_is_empty() == true)
+			continue ;
+	
 		std::cout << '|';
 		std::cout << std::setw(10) << i + 1;
 		this->_show_search_contact_line(Contact::e_FIRST_NAME, i);
@@ -97,22 +119,18 @@ void	Book::search_contact(void) {
 	std::cout << "\n" << std::endl;
 
 	do {
-		tmp.clear();
 
+		tmp.clear();
 		std::cout << "To find : ";
-		std::getline(std::cin, tmp);
-		if (std::cin.eof()) {
-			
-			std::cout << std::endl;
-			std::cout << ANSI_RED "Exit !" ANSI_NONE << std::endl;
-			exit(0);
-		}
+		this->_input_value(tmp);
 	
 		try {
+	
 			index = std::stol(tmp, nullptr, 10);
 		}
-		catch (const std::invalid_argument&) {
-			std::cout << ANSI_RED"Wrong index !" ANSI_NONE << std::endl;
+		catch (const std::exception) {
+	
+			std::cout << ANSI_RED"Invalid index !\n" ANSI_NONE << std::endl;
 			continue ;
 		}
 	
@@ -123,7 +141,8 @@ void	Book::search_contact(void) {
 		}
 		--index;
 		if (this->_book[index].info_is_empty() == true) {
-			std::cout << ANSI_RED"Contact : " << index << " is empty !\n" ANSI_NONE << std::endl;
+
+			std::cout << ANSI_RED"Contact : " << index + 1 << " is empty !\n" ANSI_NONE << std::endl;
 			break ;
 		}
 		_print_search_contact(index);
@@ -135,9 +154,9 @@ void	Book::menu(void) const {
 	
 	std::string tmp;
 
-	std::cout << "- Choose cmd : -" << std::endl;
-	std::cout << "- " ANSI_GREEN"ADD" ANSI_NONE << std::endl;
-	std::cout << "- " ANSI_GREEN"SEARCH" ANSI_NONE << std::endl;
-	std::cout << "- " ANSI_GREEN"EXIT" ANSI_NONE << std::endl;
+	std::cout << "- Choose cmd -" << std::endl;
+	std::cout << "[" ANSI_GREEN"ADD" ANSI_NONE "], ";
+	std::cout << "[" ANSI_GREEN"SEARCH" ANSI_NONE"], ";
+	std::cout << "[" ANSI_GREEN"EXIT" ANSI_NONE"]" << std::endl;
 	std::cout << std::endl;
 }

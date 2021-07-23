@@ -6,33 +6,48 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 17:57:07 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/22 19:01:05 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/23 14:15:32 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "book.hpp"
-#include "contact.hpp"
+#include "Book.hpp"
+#include "Contact.hpp"
 
 int main(void) {
 
 	Book		book;
 	std::string	cmd;
+	bool		color_set = true;
 
 	do {
 
 		book.menu();
+		if (color_set == true)
+			std::cout << ANSI_GREEN"# " ANSI_NONE;
+		else
+			std::cout << ANSI_RED"# " ANSI_NONE;
 
 		std::getline(std::cin, cmd);
-		if (std::cin.eof() || cmd == "EXIT") {
-			std::cout << ANSI_RED "Exit !" ANSI_NONE << std::endl;
-			break ;
+		if (std::cin.eof() || cmd == "EXIT")
+			book.exit();
+
+		else if (cmd == "ADD") {
+			
+			color_set = true;
+			book.add_contact();
+		}
+		
+		else if (cmd == "SEARCH") {
+			
+			color_set = true;
+			book.search_contact();
 		}
 
-		else if (cmd == "ADD")
-			book.add_contact();
-		
-		else if (cmd == "SEARCH")
-			book.search_contact();
+		else {
+
+			color_set = false;
+			std::cout << ANSI_RED"Cmd not found !\n" ANSI_NONE << std::endl;
+		}
 
 	} while (true);
 

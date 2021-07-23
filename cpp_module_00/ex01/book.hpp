@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   book.hpp                                           :+:      :+:    :+:   */
+/*   Book.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 16:40:57 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/22 19:52:16 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/23 13:38:50 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BOOK_HPP
 # define BOOK_HPP
 
-#include "contact.hpp"
+#include "Contact.hpp"
 
 #define ANSI_GREEN "\033[1;32m"
 #define ANSI_RED "\033[1;31m"
@@ -30,13 +30,15 @@ class Book {
 	public:
 		void	menu(void) const;
 		void	add_contact(void);
-		void	search_contact(void);
+		void	search_contact(void) const;
+		void	exit(void) const;
 
 	private:
 		int		_book_i;
 		Contact _book[BOOK_NBR];
 
 	private:
+		void	_input_value(std::string &value) const;
 		void	_show_search_contact_line(int info, int index) const;
 		void	_print_search_contact(int index) const;
 };

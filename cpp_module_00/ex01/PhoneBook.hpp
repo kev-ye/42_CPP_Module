@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   b.hpp                                              :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 16:40:57 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/23 15:44:33 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/26 15:22:38 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 #define ANSI_RED "\033[1;31m"
 #define ANSI_NONE "\033[0m"
 
-#define BOOK_NBR 2
+#define BOOK_NBR 8
 
-class Book {
+class PhoneBook {
 		
 	public:
-		Book(void);
-		~Book(void);
+		PhoneBook(void);
+		~PhoneBook(void);
 		
 	public:
 		void	menu(void) const;

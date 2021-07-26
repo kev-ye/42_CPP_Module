@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/25 16:16:33 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/26 14:56:29 by kaye             ###   ########.fr       */
+/*   Created: 2021/07/26 14:46:06 by kaye              #+#    #+#             */
+/*   Updated: 2021/07/26 14:52:37 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie*	newZombie(std::string name) {
+Zombie::Zombie(std::string name) : _name(name) {
+
+    return ;
+}
+
+Zombie::~Zombie(void) {
+
+    std::cout << this->_name << " -> delete" << std::endl;
+    return ;
+}
+
+void Zombie::announce() {
     
-    return (new Zombie(name));
+    std::cout << '<' << this->_name << "> " \
+        << "BraiiiiiiinnnzzzZ..." << std::endl;
 }

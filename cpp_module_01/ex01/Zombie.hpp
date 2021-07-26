@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/25 16:16:33 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/26 14:56:29 by kaye             ###   ########.fr       */
+/*   Created: 2021/07/26 14:45:55 by kaye              #+#    #+#             */
+/*   Updated: 2021/07/26 14:58:28 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-Zombie*	newZombie(std::string name) {
+#include <iostream>
+
+class Zombie {
     
-    return (new Zombie(name));
-}
+    public:
+        Zombie(std::string name);
+        ~Zombie(void);
+
+    public:
+        void	announce(void);
+		
+	private:
+		std::string _name;
+};
+
+Zombie* zombieHorde(int N, std::string name);
+
+#endif

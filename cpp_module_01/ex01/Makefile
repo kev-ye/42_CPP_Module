@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/07/20 15:47:54 by kaye              #+#    #+#              #
-#    Updated: 2021/07/26 15:23:56 by kaye             ###   ########.fr        #
+#    Created: 2021/07/23 15:43:25 by kaye              #+#    #+#              #
+#    Updated: 2021/07/26 14:44:39 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # COMPILATION
 
-CC			= clang++
-CPPFLAGS 	= -Wall -Wextra -Werror
+CC		= clang++
+CFLAGS 	= -Wall -Wextra -Werror
 
 # DIRECTORIES
 
@@ -23,10 +23,10 @@ DIRS			:= $(OBJ_DIR)
 
 # FILES
 
-NAME			:= book
+NAME			:= zombie
 SRC				:= main.cpp \
-				   PhoneBook.cpp \
-				   Contact.cpp
+				   ZombieHorde.cpp \
+				   Zombie.cpp
 OBJ				:= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 # COLORS
@@ -46,7 +46,7 @@ B_CYAN 			= \033[1;36m
 $(NAME): $(OBJ)
 	@printf "$(CL_LINE)"
 	@echo "[1 / 1] - $(B_MAGENTA)$@$(NONE)"
-	@$(CC) $(CPPFLAGS) $(OBJ) -o $@
+	@$(CC) $(CFLAGS) $(OBJ) -o $@
 	@echo "$(B_GREEN)Compilation done !$(NONE)"
 
 all: $(NAME)
@@ -68,4 +68,4 @@ $(BUILD):
 
 $(OBJ_DIR)/%.o: %.cpp | $(BUILD)
 	@printf "$(CL_LINE)Compiling srcs object : $(B_CYAN)$< $(NONE)...\r"
-	@$(CC) $(CPPFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@

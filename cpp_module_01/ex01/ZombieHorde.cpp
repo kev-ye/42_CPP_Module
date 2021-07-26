@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/25 16:16:33 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/26 14:56:29 by kaye             ###   ########.fr       */
+/*   Created: 2021/07/26 14:46:08 by kaye              #+#    #+#             */
+/*   Updated: 2021/07/26 14:57:05 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie*	newZombie(std::string name) {
+Zombie* zombieHorde(int N, std::string name) {
     
-    return (new Zombie(name));
+    
+    for (size_t i = 0; i < N; i++)
+        new         
 }

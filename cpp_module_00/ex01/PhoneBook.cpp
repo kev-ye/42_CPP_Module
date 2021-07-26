@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   book.cpp                                           :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 16:40:50 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/23 15:52:22 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/26 15:23:14 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Book.hpp"
+#include "PhoneBook.hpp"
 
-Book::Book (void) : _book_i(0) {
+PhoneBook::PhoneBook (void) : _book_i(0) {
 
 	return ;
 }
 
-Book::~Book (void) {
+PhoneBook::~PhoneBook (void) {
 
 	for (int i = 0; i < BOOK_NBR; i++)
 		this->_book[i].info_clean();
 	return ;
 }
 
-void	Book::exit(void) const {
+void	PhoneBook::exit(void) const {
 
 	std::cout << ANSI_RED "Exit !" ANSI_NONE << std::endl;
 	std::exit(EXIT_SUCCESS);
 }
 
-void	Book::_input_value(std::string &value) const {
+void	PhoneBook::_input_value(std::string &value) const {
 
 	std::getline (std::cin, value);
 	if (std::cin.eof() == true)
 		this->exit();
 }
 
-void	Book::_show_search_contact_line(int info, int index) const {
+void	PhoneBook::_show_search_contact_line(int info, int index) const {
 	
 	std::cout << '|';
 	if (this->_book[index].info[info].length() > 9)
@@ -46,7 +46,7 @@ void	Book::_show_search_contact_line(int info, int index) const {
 		std::cout << std::setw(10) << this->_book[index].info[info];
 }
 
-void	Book::_print_search_contact(int index) const {
+void	PhoneBook::_print_search_contact(int index) const {
 	
 	const char *info_name[] = {"First name : ", "Last name : ", "Nickname : ", "Phone number : ", "darkest secret : "};
 
@@ -58,7 +58,7 @@ void	Book::_print_search_contact(int index) const {
 	std::cout << std::endl;
 }
 
-void	Book::add_contact(void) {
+void	PhoneBook::add_contact(void) {
 
 	this->_book[this->_book_i].info_clean();
 
@@ -89,7 +89,7 @@ void	Book::add_contact(void) {
 	}
 }
 
-void	Book::search_contact(void) const {
+void	PhoneBook::search_contact(void) const {
 
 	std::string	tmp;
 	long		index = -1;
@@ -161,7 +161,7 @@ void	Book::search_contact(void) const {
 	} while (true);
 }
 
-void	Book::menu(void) const {
+void	PhoneBook::menu(void) const {
 	
 	std::string tmp;
 

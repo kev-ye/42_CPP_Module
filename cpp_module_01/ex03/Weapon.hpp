@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/25 16:16:35 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/26 19:04:20 by kaye             ###   ########.fr       */
+/*   Created: 2021/07/26 18:24:43 by kaye              #+#    #+#             */
+/*   Updated: 2021/07/26 20:25:04 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
-void	randomChump(std::string name){
-	
-	Zombie random_chump(name);
+#include <iostream>
 
-	random_chump.announce();
-}
+class Weapon {
+
+};
+
+#endif

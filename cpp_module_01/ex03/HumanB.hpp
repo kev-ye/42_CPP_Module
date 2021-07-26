@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/25 16:16:35 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/26 19:04:20 by kaye             ###   ########.fr       */
+/*   Created: 2021/07/26 18:24:39 by kaye              #+#    #+#             */
+/*   Updated: 2021/07/26 20:24:49 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-void	randomChump(std::string name){
-	
-	Zombie random_chump(name);
+#include "Weapon.hpp"
 
-	random_chump.announce();
-}
+class HumanB {
+
+};
+
+#endif

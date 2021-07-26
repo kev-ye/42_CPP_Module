@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 16:16:37 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/25 19:24:12 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/26 19:04:35 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 Zombie::Zombie(std::string name) : _name(name) {
 
-    return ;
+	return ;
 }
 
 Zombie::~Zombie(void) {
 
-    std::cout << this->_name << " -> delete" << std::endl;
-    return ;
+	std::cout << this->_name << " -> delete" << std::endl;
+	return ;
 }
 
 void Zombie::announce() {
-    
-    std::cout << '<' << this->_name << "> " \
-        << "BraiiiiiiinnnzzzZ..." << std::endl;
+	
+	std::cout << '<' << this->_name << "> " \
+		<< "BraiiiiiiinnnzzzZ..." << std::endl;
 }

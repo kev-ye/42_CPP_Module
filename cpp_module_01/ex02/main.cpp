@@ -5,21 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/25 16:16:17 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/26 19:04:08 by kaye             ###   ########.fr       */
+/*   Created: 2021/07/26 17:56:28 by kaye              #+#    #+#             */
+/*   Updated: 2021/07/26 19:05:20 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
 int main() {
+	
+	std::string string("HI THIS IS BRAIN");
+	std::string *stringPTR(&string);
+	std::string &stringREF(string);
 
-	Zombie kaye("kaye");
-	Zombie *xue = newZombie("xue");
+	std::cout << "string addr    : " << &string << std::endl;
+	std::cout << "stringPTR addr : " << stringPTR << std::endl;
+	std::cout << "stringREF addr : " << &stringREF << std::endl;
+	
+	std::cout << std::endl;
 
-	xue->announce();
-	randomChump("random");
+	std::cout << "stringPTR content : " << *stringPTR << std::endl;
+	std::cout << "stringREF content : " << stringREF << std::endl;
 
-	delete xue;
 	return (0);
 }

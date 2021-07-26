@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 16:40:57 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/26 15:22:38 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/26 17:20:39 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class PhoneBook {
 		Contact _book[BOOK_NBR];
 
 	private:
-		void	_input_value(std::string &value) const;
+		void	_input_value(std::string &tmp) const;
 		void	_show_search_contact_line(int info, int index) const;
 		void	_print_search_contact(int index) const;
 };

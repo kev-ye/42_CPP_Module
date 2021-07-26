@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 16:40:50 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/26 15:23:14 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/26 17:21:09 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,11 @@ void	PhoneBook::exit(void) const {
 	std::exit(EXIT_SUCCESS);
 }
 
-void	PhoneBook::_input_value(std::string &value) const {
+void	PhoneBook::_input_value(std::string &tmp) const {
 
-	std::getline (std::cin, value);
+	tmp.clear();
+
+	std::getline (std::cin, tmp);
 	if (std::cin.eof() == true)
 		this->exit();
 }
@@ -40,10 +42,10 @@ void	PhoneBook::_input_value(std::string &value) const {
 void	PhoneBook::_show_search_contact_line(int info, int index) const {
 	
 	std::cout << '|';
-	if (this->_book[index].info[info].length() > 9)
-		std::cout << this->_book[index].info[info].substr(0, 9) << '.';
+	if (this->_book[index].get_info(info).length() > 9)
+		std::cout << this->_book[index].get_info(info).substr(0, 9) << '.';
 	else
-		std::cout << std::setw(10) << this->_book[index].info[info];
+		std::cout << std::setw(10) << this->_book[index].get_info(info);
 }
 
 void	PhoneBook::_print_search_contact(int index) const {
@@ -53,29 +55,37 @@ void	PhoneBook::_print_search_contact(int index) const {
 	for (int i = 0; i < INFO_NBR; i++) {
 
 		std::cout << info_name[i];
-		std::cout << this->_book[index].info[i] << std::endl;
+		std::cout << this->_book[index].get_info(i) << std::endl;
 	}
 	std::cout << std::endl;
 }
 
 void	PhoneBook::add_contact(void) {
 
+	std::string tmp;
+
 	this->_book[this->_book_i].info_clean();
 
 	std::cout << std::setw(4) << "" << "-> Enter the first name : ";
-	this->_input_value(this->_book[this->_book_i].info[Contact::e_FIRST_NAME]);
+	
+	this->_input_value(tmp);
+	this->_book[this->_book_i].set_info(tmp, e_FIRST_NAME);
 
 	std::cout << std::setw(4) << "" << "-> Enter the last name : ";
-	this->_input_value(this->_book[this->_book_i].info[Contact::e_LAST_NAME]);
+	this->_input_value(tmp);
+	this->_book[this->_book_i].set_info(tmp, e_LAST_NAME);
 
 	std::cout << std::setw(4) << "" << "-> Enter the nickname : ";
-	this->_input_value(this->_book[this->_book_i].info[Contact::e_NICKNAME]);
+	this->_input_value(tmp);
+	this->_book[this->_book_i].set_info(tmp, e_NICKNAME);
 
 	std::cout << std::setw(4) << "" << "-> Enter the phone number : ";
-	this->_input_value(this->_book[this->_book_i].info[Contact::e_PHONE_NBR]);
+	this->_input_value(tmp);
+	this->_book[this->_book_i].set_info(tmp, e_PHONE_NBR);
 
 	std::cout << std::setw(4) << "" << "-> Enter the darkest secret : ";
-	this->_input_value(this->_book[this->_book_i].info[Contact::e_DARKEST_SECRET]);
+	this->_input_value(tmp);
+	this->_book[this->_book_i].set_info(tmp, e_DARKEST_SECRET);
 
 	std::cout << std::endl;
 
@@ -85,7 +95,7 @@ void	PhoneBook::add_contact(void) {
 	
 		this->_book_i = 0;
 		std::cout << ANSI_RED"Book is full !\n" ANSI_NONE;
-		std::cout << ANSI_RED"Next cmd ADD will overwrite (index -> 0) !" ANSI_NONE << std::endl;
+		std::cout << ANSI_RED"Next cmd ADD will overwrite (index -> 0) !\n" ANSI_NONE << std::endl;
 	}
 }
 
@@ -120,9 +130,9 @@ void	PhoneBook::search_contact(void) const {
 	
 		std::cout << '|';
 		std::cout << std::setw(10) << i + 1;
-		this->_show_search_contact_line(Contact::e_FIRST_NAME, i);
-		this->_show_search_contact_line(Contact::e_LAST_NAME, i);
-		this->_show_search_contact_line(Contact::e_NICKNAME, i);
+		this->_show_search_contact_line(e_FIRST_NAME, i);
+		this->_show_search_contact_line(e_LAST_NAME, i);
+		this->_show_search_contact_line(e_NICKNAME, i);
 		std::cout << '|' << std::endl;
 	}
 
@@ -131,7 +141,6 @@ void	PhoneBook::search_contact(void) const {
 
 	do {
 
-		tmp.clear();
 		std::cout << "To find : ";
 		this->_input_value(tmp);
 	

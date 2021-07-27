@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 18:24:34 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/26 20:24:36 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/27 15:09:36 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,16 @@
 
 class HumanA {
 	
+	public:
+		HumanA(std::string name, Weapon &weapon);
+		~HumanA(void);
 
+	public:
+		void	attack(void);
+
+	private:
+		std::string _name;
+		Weapon		&_weapon;
 };
 
 #endif

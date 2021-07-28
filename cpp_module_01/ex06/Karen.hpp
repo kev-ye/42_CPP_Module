@@ -1,31 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/27 18:38:29 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/28 14:19:50 by kaye             ###   ########.fr       */
+/*   Created: 2021/07/28 14:26:03 by kaye              #+#    #+#             */
+/*   Updated: 2021/07/28 14:28:53 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#ifndef KAREN_HPP
+# define KAREN_HPP
 
-int main() {
+#include <iostream>
 
-	Karen karen;
+enum	e_complain {
+	
+	e_DEBUG = 0,
+	e_INFO,
+	e_WARNING,
+	e_ERROR,
+	e_COMPLAIN
+};
 
-	karen.complain("DEBUG");
-	karen.complain("debug");
+class Karen {
+	
+	public:
+		Karen(void);
+		~Karen(void);
 
-	karen.complain("INFO");
-	karen.complain("info");
+	public:
+		void	complain(std::string level);
 
-	karen.complain("WARNING");
-	karen.complain("warning");
+	private:
+		void	_debug(void);
+		void	_info(void);
+		void	_warning(void);
+		void	_error(void);
 
-	karen.complain("ERROR");
-	karen.complain("error");
-	return (0);
-}
+	private:
+		void	(Karen::*_complain[4])(void);
+};
+
+#endif

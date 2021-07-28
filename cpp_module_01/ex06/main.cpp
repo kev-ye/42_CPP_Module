@@ -5,27 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/27 18:38:29 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/28 14:19:50 by kaye             ###   ########.fr       */
+/*   Created: 2021/07/28 14:26:05 by kaye              #+#    #+#             */
+/*   Updated: 2021/07/28 14:39:30 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
 
-int main() {
+int main(int ac, char **av) {
 
-	Karen karen;
+	if (ac != 2) {
 
-	karen.complain("DEBUG");
-	karen.complain("debug");
+		std::cout << "usage: ./karenFilter [log_level]" << std::endl;
+		return (1);
+	}
+	
+	Karen karen_filter;
 
-	karen.complain("INFO");
-	karen.complain("info");
-
-	karen.complain("WARNING");
-	karen.complain("warning");
-
-	karen.complain("ERROR");
-	karen.complain("error");
+	karen_filter.complain(av[1]);
 	return (0);
 }

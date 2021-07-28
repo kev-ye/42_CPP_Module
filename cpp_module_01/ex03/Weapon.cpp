@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 18:24:45 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/27 15:08:44 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/28 12:03:52 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Weapon::~Weapon() {
 	return ;
 }
 
-std::string const	&Weapon::getType(void) {
+std::string const	&Weapon::getType(void) const {
 
 	return (this->_weapon_type);
 }

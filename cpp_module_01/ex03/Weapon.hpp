@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 18:24:43 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/27 15:09:01 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/28 12:03:47 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Weapon {
 		~Weapon(void);
 
 	public:
-		std::string const	&getType(void);
+		std::string const	&getType(void) const;
 		void				setType(std::string to_set);
 
 	private:

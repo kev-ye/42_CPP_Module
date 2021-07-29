@@ -6,14 +6,14 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/23 15:43:25 by kaye              #+#    #+#              #
-#    Updated: 2021/07/27 18:38:04 by kaye             ###   ########.fr        #
+#    Updated: 2021/07/29 16:49:19 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # COMPILATION
 
 CC		= clang++
-CFLAGS 	= -Wall -Wextra -Werror
+CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
 # DIRECTORIES
 

@@ -6,14 +6,13 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 18:38:29 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/28 14:19:50 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/30 13:47:33 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
 
 int main() {
-
 	Karen karen;
 
 	karen.complain("DEBUG");

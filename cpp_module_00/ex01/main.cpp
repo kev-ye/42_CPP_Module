@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 17:57:07 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/26 15:23:51 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/30 13:43:59 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int main(void) {
 	bool		color_set = true;
 
 	do {
-
 		book.menu();
+
 		if (color_set == true)
 			std::cout << ANSI_GREEN"# " ANSI_NONE;
 		else
@@ -30,26 +30,18 @@ int main(void) {
 		std::getline(std::cin, cmd);
 		if (std::cin.eof() || cmd == "EXIT")
 			book.exit();
-
-		else if (cmd == "ADD") {
-			
+		else if (cmd == "ADD") {	
 			color_set = true;
 			book.add_contact();
 		}
-		
 		else if (cmd == "SEARCH") {
-			
 			color_set = true;
 			book.search_contact();
 		}
-
 		else {
-
 			color_set = false;
 			std::cout << ANSI_RED"Cmd not found !\n" ANSI_NONE << std::endl;
 		}
-
 	} while (true);
-
 	return (0);
 }

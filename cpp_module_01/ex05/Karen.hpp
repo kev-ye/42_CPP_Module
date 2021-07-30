@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 18:38:42 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/28 14:26:36 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/30 13:47:31 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <iostream>
 
 enum	e_complain {
-	
 	e_DEBUG = 0,
 	e_INFO,
 	e_WARNING,
@@ -25,7 +24,6 @@ enum	e_complain {
 };
 
 class Karen {
-	
 	public:
 		Karen(void);
 		~Karen(void);

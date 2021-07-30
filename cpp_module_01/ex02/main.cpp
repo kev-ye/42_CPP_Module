@@ -6,14 +6,13 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 17:56:28 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/26 19:05:20 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/30 13:46:20 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
 int main() {
-	
 	std::string string("HI THIS IS BRAIN");
 	std::string *stringPTR(&string);
 	std::string &stringREF(string);

@@ -6,32 +6,28 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 16:40:50 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/26 17:21:09 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/30 13:41:05 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook (void) : _book_i(0) {
-
 	return ;
 }
 
 PhoneBook::~PhoneBook (void) {
-
 	for (int i = 0; i < BOOK_NBR; i++)
 		this->_book[i].info_clean();
 	return ;
 }
 
 void	PhoneBook::exit(void) const {
-
 	std::cout << ANSI_RED "Exit !" ANSI_NONE << std::endl;
 	std::exit(EXIT_SUCCESS);
 }
 
 void	PhoneBook::_input_value(std::string &tmp) const {
-
 	tmp.clear();
 
 	std::getline (std::cin, tmp);
@@ -40,7 +36,6 @@ void	PhoneBook::_input_value(std::string &tmp) const {
 }
 
 void	PhoneBook::_show_search_contact_line(int info, int index) const {
-	
 	std::cout << '|';
 	if (this->_book[index].get_info(info).length() > 9)
 		std::cout << this->_book[index].get_info(info).substr(0, 9) << '.';
@@ -49,11 +44,14 @@ void	PhoneBook::_show_search_contact_line(int info, int index) const {
 }
 
 void	PhoneBook::_print_search_contact(int index) const {
-	
-	const char *info_name[] = {"First name : ", "Last name : ", "Nickname : ", "Phone number : ", "darkest secret : "};
+	const char *info_name[] = {
+		"First name : ",
+		"Last name : ",
+		"Nickname : ",
+		"Phone number : ",
+		"darkest secret : "};
 
 	for (int i = 0; i < INFO_NBR; i++) {
-
 		std::cout << info_name[i];
 		std::cout << this->_book[index].get_info(i) << std::endl;
 	}
@@ -61,13 +59,11 @@ void	PhoneBook::_print_search_contact(int index) const {
 }
 
 void	PhoneBook::add_contact(void) {
-
 	std::string tmp;
 
 	this->_book[this->_book_i].info_clean();
 
 	std::cout << std::setw(4) << "" << "-> Enter the first name : ";
-	
 	this->_input_value(tmp);
 	this->_book[this->_book_i].set_info(tmp, e_FIRST_NAME);
 
@@ -92,7 +88,6 @@ void	PhoneBook::add_contact(void) {
 	if (this->_book[this->_book_i].info_is_empty() == false)
 		++this->_book_i;
 	if (this->_book_i >= BOOK_NBR) {
-	
 		this->_book_i = 0;
 		std::cout << ANSI_RED"Book is full !\n" ANSI_NONE;
 		std::cout << ANSI_RED"Next cmd ADD will overwrite (index -> 0) !\n" ANSI_NONE << std::endl;
@@ -100,16 +95,12 @@ void	PhoneBook::add_contact(void) {
 }
 
 void	PhoneBook::search_contact(void) const {
-
 	std::string	tmp;
 	long		index = -1;
 
 	for (int i = 0; i < BOOK_NBR; i++) {
-		
 		if (this->_book[i].info_is_empty() == true) {
-			
 			if (i == BOOK_NBR - 1) {
-
 				std::cout << ANSI_RED "Book is empty !\n" ANSI_NONE << std::endl;
 				return ;
 			}
@@ -124,10 +115,8 @@ void	PhoneBook::search_contact(void) const {
 	std::cout << "|----------|----------|----------|----------|" << std::endl;
 
 	for (int i = 0; i < BOOK_NBR; i++) {
-
 		if (this->_book[i].info_is_empty() == true)
 			continue ;
-	
 		std::cout << '|';
 		std::cout << std::setw(10) << i + 1;
 		this->_show_search_contact_line(e_FIRST_NAME, i);
@@ -140,28 +129,22 @@ void	PhoneBook::search_contact(void) const {
 	std::cout << "\n" << std::endl;
 
 	do {
-
 		std::cout << "To find : ";
 		this->_input_value(tmp);
-	
 		try {
-	
 			index = std::stol(tmp, nullptr, 10);
 		}
 		catch (const std::exception) {
-	
 			std::cout << ANSI_RED"Invalid index !\n" ANSI_NONE << std::endl;
 			continue ;
 		}
 	
 		if (index < 1 || index > BOOK_NBR) {
-		
 			std::cout << ANSI_RED"Wrong index !\n" ANSI_NONE << std::endl;
 			continue ;
 		}
 		--index;
 		if (this->_book[index].info_is_empty() == true) {
-
 			std::cout << ANSI_RED"Contact : " << index + 1 << " is empty !\n" ANSI_NONE << std::endl;
 			break ;
 		}
@@ -171,7 +154,6 @@ void	PhoneBook::search_contact(void) const {
 }
 
 void	PhoneBook::menu(void) const {
-	
 	std::string tmp;
 
 	std::cout << "- Choose cmd -" << std::endl;

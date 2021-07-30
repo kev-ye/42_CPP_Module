@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 16:40:57 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/26 17:20:39 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/30 13:44:13 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 #define BOOK_NBR 8
 
 class PhoneBook {
-		
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);

@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 14:45:55 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/26 19:05:02 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/30 13:46:13 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <iostream>
 
 class Zombie {
-
 	public:
 		Zombie(void);
 		~Zombie(void);

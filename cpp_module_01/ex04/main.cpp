@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 15:19:14 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/27 18:29:56 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/30 13:47:12 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 #include <fstream>
 
 int main(int ac, char **av) {
-
 	if (ac != 4) {
-	
 		std::cerr << "usage : ./replace [filename] [s1] [s2]" << std::endl;
 		return (1);
 	}
@@ -24,7 +22,6 @@ int main(int ac, char **av) {
 	std::string s1(av[2]);
 	std::string s2(av[3]);
 	if (s1.empty() == true || s2.empty() == true) {
-	
 		std::cerr << "s1 or s2 can't be empty" << std::endl;
 		return (1);
 	}
@@ -35,14 +32,12 @@ int main(int ac, char **av) {
 
 	std::ifstream ifs(filename);
 	if (!ifs.is_open()) {
-
 		std::cerr << "open [" << filename << "] failed !" << std::endl;
 		return (1);
 	}
 
 	std::ofstream ofs(to_replace);
 	if (!ofs.is_open()) {
-
 		std::cerr << "open [" << to_replace << "] failed !" << std::endl;
 		return (1);
 	}
@@ -50,18 +45,14 @@ int main(int ac, char **av) {
 	std::string contents;
 	std::string::size_type pos;
 	do {
-		
 		std::getline(ifs, contents);
 	
 		do {
-			
 			if ((pos = contents.find(s1)) == std::string::npos) {
-
 				ofs << contents;
 				break ;
 			}
 			else {
-
 				contents.erase(pos, s1.length());
 				contents.insert(pos, s2);
 			}

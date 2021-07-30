@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 18:24:39 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/27 15:10:53 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/30 13:46:40 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "Weapon.hpp"
 
 class HumanB {
-
 	public:
 		HumanB(std::string name);
 		~HumanB(void);
@@ -28,7 +27,6 @@ class HumanB {
 	private:
 		std::string _name;
 		Weapon		*_weapon;
-
 };
 
 #endif

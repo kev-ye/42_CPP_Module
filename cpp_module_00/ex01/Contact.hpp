@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 17:46:00 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/26 17:15:48 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/30 13:35:46 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ enum	e_info {
 };
 
 class Contact {
-
 	public:
 		Contact(void);
 		~Contact(void);
@@ -41,7 +40,6 @@ class Contact {
 
 	private:
 		std::string	_info[INFO_NBR];
-		
 };
 
 #endif

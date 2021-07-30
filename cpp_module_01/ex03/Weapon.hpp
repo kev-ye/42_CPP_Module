@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 18:24:43 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/28 12:03:47 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/30 13:46:53 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <iostream>
 
 class Weapon {
-
 	public:
 		Weapon(std::string weapon_type);
 		~Weapon(void);

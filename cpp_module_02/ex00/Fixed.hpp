@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 16:52:46 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/30 18:02:20 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/31 14:50:50 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FIXED_HPP
 
 #include <iostream>
-#include <cmath>
 
 class Fixed
 {

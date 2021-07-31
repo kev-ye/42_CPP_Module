@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 16:53:00 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/30 18:02:32 by kaye             ###   ########.fr       */
+/*   Updated: 2021/07/31 15:07:11 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int const Fixed::_bits = 8;
 
+/* 
+** CONSTRUCTORS / DESTRUCTOR
+*/
 Fixed::Fixed(void) : _fixed(0) {
 	std::cout << "Default constructor called" << std::endl;
 	return ;
@@ -30,6 +33,9 @@ Fixed::~Fixed(void) {
 	return ;
 }
 
+/*
+** MEMBERS
+*/
 int	Fixed::getRawBits(void) const {
 	std::cout << "getRawBits member function called" << std::endl;
 	return 	this->_fixed;
@@ -39,6 +45,9 @@ void	Fixed::setRawBits(int const raw) {
 	this->_fixed = raw;
 }
 
+/*
+** OPERATORS
+*/
 Fixed &	Fixed::operator=(Fixed const & rhs) {
 	std::cout << "Assignation operator called" << std::endl;
 	if (this != &rhs)

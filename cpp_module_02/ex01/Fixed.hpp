@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 17:34:15 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/31 18:28:03 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/01 15:02:06 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Fixed {
 	public:
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
+
 		float	toFloat(void) const;
 		int		toInt(void) const;
 

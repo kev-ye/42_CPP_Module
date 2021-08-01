@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 14:33:45 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/31 18:32:11 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/01 14:47:29 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Fixed::Fixed(float const f) : _fixed(roundf(f * ((float)(1 << Fixed::_bits)))) {
 }
 
 Fixed::Fixed(Fixed const & src) {
-		*this = src;
+	*this = src;
 	return ;
 }
 

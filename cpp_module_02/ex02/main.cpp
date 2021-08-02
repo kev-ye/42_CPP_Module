@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 14:32:24 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/01 15:51:06 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/02 14:49:03 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(void) {
 	Fixed		a;
 	Fixed const	b(Fixed(5.05f) * Fixed(2));
-	Fixed		c(1);
+	Fixed		c(-1);
 	Fixed		d(1.234f);
 
 	std::cout << "\033[1;32mAssignment c to a\033[0m" << std::endl;

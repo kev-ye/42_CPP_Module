@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 14:33:45 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/01 14:47:29 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/02 16:18:06 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,14 @@ Fixed const & Fixed::min(Fixed const & a, Fixed const & b) {
 }
 
 Fixed const & Fixed::max(Fixed const & a, Fixed const & b) {
+	return (a.getRawBits() > b.getRawBits()) ? a : b;
+}
+
+Fixed & 				Fixed::min(Fixed & a, Fixed & b) {
+	return (a.getRawBits() < b.getRawBits()) ? a : b;
+}
+
+Fixed & 				Fixed::max(Fixed & a, Fixed & b) {
 	return (a.getRawBits() > b.getRawBits()) ? a : b;
 }
 

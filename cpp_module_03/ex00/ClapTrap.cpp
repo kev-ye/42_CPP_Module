@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:07:54 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/02 13:01:27 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/02 15:13:22 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ ClapTrap::~ClapTrap(void) {
 }
 
 void	ClapTrap::attack(std::string const & target) {
-	std::cout << "ClapTrap [\033[1;32m" << this->_name \
-		<< "\033[0m] attacks [\033[1;31m" << target \
-		<< "\033[0m], causing [\033[1;33m" << this->_attack_d \
-		<< "\033[0m] points of damage!" << std::endl;
+	std::cout << "ClapTrap [\e[1;32m" << this->_name \
+		<< "\e[0m] attacks [\e[1;31m" << target \
+		<< "\e[0m], causing [\e[1;33m" << this->_attack_d \
+		<< "\e[0m] points of damage!" << std::endl;
 	this->_old_attck_d = this->_attack_d;
 	this->_attack_d += this->_hit_p;
 }
@@ -50,25 +50,25 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 
 	unsigned int tmp = amount;
 
-	std::cout << "ClapTrap [\033[1;32m" << this->_name \
-		<< "\033[0m] has [\033[1;33m" << this->_energy_p << "\033[0m] energy points. And he received a [\033[1;33m" \
-		<< amount << "\033[0m] points of damage! ";
+	std::cout << "ClapTrap [\e[1;32m" << this->_name \
+		<< "\e[0m] has [\e[1;33m" << this->_energy_p << "\e[0m] energy points. And he received a [\e[1;33m" \
+		<< amount << "\e[0m] points of damage! ";
 	
 	if (amount > INT32_MAX)
 		amount = INT32_MAX;
 	if ((this->_energy_p -= amount) <= 0)
-		std::cout << "ClapTrap [\033[1;32m" << this->_name << "\033[0m] Die!" << std::endl;
+		std::cout << "ClapTrap [\e[1;32m" << this->_name << "\e[0m] Die!" << std::endl;
 	else
-		std::cout << "ClapTrap [\033[1;32m" << this->_name << "\033[0m] loss of [\033[1;33m" << tmp \
-		<< "\033[0m] energy points!" << std::endl;
+		std::cout << "ClapTrap [\e[1;32m" << this->_name << "\e[0m] loss of [\e[1;33m" << tmp \
+		<< "\e[0m] energy points!" << std::endl;
 	
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {
 	this->_energy_p += amount;
-	std::cout << "ClapTrap [\033[1;32m" << this->_name \
-		<< "\033[0m] Repairing ... He get [\033[1;33m" 
-		<< amount << "\033[0m] energy points!" << std::endl;
+	std::cout << "ClapTrap [\e[1;32m" << this->_name \
+		<< "\e[0m] Repairing ... He get [\e[1;33m" 
+		<< amount << "\e[0m] energy points!" << std::endl;
 }
 
 int	ClapTrap::getAttackDamage(void) {

@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:07:29 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/02 13:02:27 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/02 15:22:47 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class ClapTrap
 		std::string	getName(void);
 		int			getAttackDamage(void);
 
-	private:
+	protected:
 		std::string	_name;
 		int			_hit_p;
 		int			_energy_p;

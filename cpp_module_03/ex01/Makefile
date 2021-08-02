@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/23 15:43:25 by kaye              #+#    #+#              #
-#    Updated: 2021/08/02 13:02:29 by kaye             ###   ########.fr        #
+#    Updated: 2021/08/02 15:10:31 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ DIRS			:= $(OBJ_DIR)
 
 NAME			:= fixed
 SRC				:= main.cpp \
-				   ClapTrap.cpp
+				   ClapTrap.cpp \
+				   ScavTrap.cpp
 OBJ				:= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 # COLORS

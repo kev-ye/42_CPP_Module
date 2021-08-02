@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:07:29 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/02 13:01:04 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/02 17:53:47 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define CLAPTRAP_H
 
 #include <iostream>
+
+#define HP 10
+#define EP 10
 
 class ClapTrap
 {
@@ -38,7 +41,6 @@ class ClapTrap
 		int			_hit_p;
 		int			_energy_p;
 		int			_attack_d;
-		int			_old_attck_d;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 13:02:52 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/02 15:47:21 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/02 18:51:35 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@ ScavTrap::ScavTrap(void) : ClapTrap() {
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
+	std::cout << "\e[1;36mScavTrap\e[0m named parameter constructor" << std::endl;
 	return ;
 }
 
 ScavTrap::ScavTrap(ScavTrap const & src) {
+	std::cout << "\e[1;36mScavTrap\e[0m assignment constructor" << std::endl;
 	*this = src;
 	return ;
 }
@@ -31,6 +33,31 @@ ScavTrap::~ScavTrap(void) {
 	return ;
 }
 
+void	ScavTrap::attack(std::string const & target) {
+	if (this->_energy_p <= 0)
+		std::cout << "ScavTrap [\e[1;32m" << this->_name \
+		<< "\e[0m] isn't enough energy point. So he can't attack!" << std::endl;
+	else {
+		std::cout << "ScavTrap [\e[1;32m" << this->_name \
+			<< "\e[0m] attacks [\e[1;31m" << target \
+			<< "\e[0m], causing [\e[1;33m" << this->_attack_d \
+			<< "\e[0m] points of damage!";
+		this->_energy_p -= 10;
+		std::cout << " (\e[33m" << this->_energy_p << "\e[0m energy points left)" << std::endl;
+	}
+}
+
+void	ScavTrap::guardGate(void) {
+	std::cout << "ScavTrap [\e[1;32m" << this->_name \
+		<< "\e[0m] become guard gate" << std::endl;
+}
+
 ScavTrap	& ScavTrap::operator=(ScavTrap const & rhs) {
+	if (this != &rhs) {
+		this->_name = rhs._name;
+		this->_hit_p = rhs._hit_p;
+		this->_energy_p = rhs._energy_p;
+		this->_attack_d = rhs._attack_d;
+	}
 	return *this;
 }

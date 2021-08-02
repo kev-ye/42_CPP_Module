@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:07:54 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/02 15:46:47 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/02 18:47:24 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,40 +42,41 @@ ClapTrap::~ClapTrap(void) {
 }
 
 void	ClapTrap::attack(std::string const & target) {
-	std::cout << "ClapTrap [\e[1;32m" << this->_name \
-		<< "\e[0m] attacks [\e[1;31m" << target \
-		<< "\e[0m], causing [\e[1;33m" << this->_attack_d \
-		<< "\e[0m] points of damage!" << std::endl;
-	this->_old_attck_d = this->_attack_d;
-	this->_attack_d += this->_hit_p;
+	if (this->_energy_p <= 0)
+		std::cout << "ClapTrap [\e[1;32m" << this->_name \
+		<< "\e[0m] isn't enough energy point. So he can't attack!" << std::endl;
+	else {
+		std::cout << "ClapTrap [\e[1;32m" << this->_name \
+			<< "\e[0m] attacks [\e[1;31m" << target \
+			<< "\e[0m], causing [\e[1;33m" << this->_attack_d \
+			<< "\e[0m] points of damage!";
+		this->_energy_p -= 10;
+		std::cout << " (\e[33m" << this->_energy_p << "\e[0m energy points left)" << std::endl;
+	}
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
+	std::cout << "[\e[1;32m" << this->_name \
+		<< "\e[0m] received a [\e[1;33m" << amount << "\e[0m] points of damage! ";
 
-	unsigned int tmp = amount;
-
-	std::cout << "ClapTrap [\e[1;32m" << this->_name \
-		<< "\e[0m] has [\e[1;33m" << this->_energy_p << "\e[0m] energy points. And he received a [\e[1;33m" \
-		<< amount << "\e[0m] points of damage! ";
-	
-	if (amount > INT32_MAX)
-		amount = INT32_MAX;
-	if ((this->_energy_p -= amount) <= 0)
-		std::cout << "ClapTrap [\e[1;32m" << this->_name << "\e[0m] Die!" << std::endl;
+	if ((this->_hit_p -= amount) <= 0)
+		std::cout << "[\e[1;32m" << this->_name << "\e[0m] Die!" << std::endl;
 	else
-		std::cout << "ClapTrap [\e[1;32m" << this->_name << "\e[0m] loss of [\e[1;33m" << tmp \
-		<< "\e[0m] energy points!" << std::endl;
+		std::cout << "[\e[1;32m" << this->_name << "\e[0m] loss of [\e[1;33m" << amount \
+		<< "\e[0m] hit points! (\e[33m" << this->_hit_p << "\e[0m hit points left)" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {
-	this->_energy_p += amount;
-	std::cout << "ClapTrap [\e[1;32m" << this->_name \
-		<< "\e[0m] Repairing ... He get [\e[1;33m" 
+	std::cout << "[\e[1;32m" << this->_name \
+		<< "\e[0m] Repairing ... He get [\e[1;33m"
+		<< amount << "\e[0m] hit points! And [\e[1;33m" \
 		<< amount << "\e[0m] energy points!" << std::endl;
+	this->_hit_p += amount;
+	this->_energy_p += amount;
 }
 
 int	ClapTrap::getAttackDamage(void) {
-	return this->_old_attck_d;
+	return this->_attack_d;
 }
 
 std::string		ClapTrap::getName(void) {

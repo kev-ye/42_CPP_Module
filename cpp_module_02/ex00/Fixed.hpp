@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 16:52:46 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/31 14:50:50 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/02 16:21:52 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Fixed
 		Fixed(Fixed const &	src);
 		~Fixed(void);
 
-	Fixed &	operator=(Fixed const & rhs);
+		Fixed &	operator=(Fixed const & rhs);
 
 	public:
 		int		getRawBits(void) const;

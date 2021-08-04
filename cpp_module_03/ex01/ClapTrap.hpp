@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:07:29 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/02 15:22:47 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/04 17:08:20 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 #include <iostream>
 
-class ClapTrap
-{
+class ClapTrap {
 	public:
 		ClapTrap(void);
 		ClapTrap(std::string name);

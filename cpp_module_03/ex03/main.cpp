@@ -6,25 +6,21 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:07:14 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/04 13:23:24 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/04 17:00:34 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main() {
-	ClapTrap a;
-	ClapTrap b("CL-69-1");
+	DiamondTrap a("Test");
 
-
-	a.attack(b.getName());
-	b.takeDamage(a.getAttackDamage());
-	b.attack(a.getName());
-	a.takeDamage(b.getAttackDamage());
-	a.attack(b.getName());
-	b.attack(a.getName());
+	a.whoAmI();
+	a.attack("Unknow");
+	a.takeDamage(10);
 	a.beRepaired(10);
-	a.attack(b.getName());
-	a.takeDamage(b.getAttackDamage());
+	a.guardGate();
+	a.highFivesGuys();
+	
 	return 0;
 }

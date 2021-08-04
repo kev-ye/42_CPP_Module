@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/23 15:43:25 by kaye              #+#    #+#              #
-#    Updated: 2021/08/04 18:36:50 by kaye             ###   ########.fr        #
+#    Updated: 2021/08/04 18:33:11 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,11 @@ DIRS			:= $(OBJ_DIR)
 
 # FILES
 
-NAME			:= ScavTrap
+NAME			:= FragTrap
 SRC				:= main.cpp \
 				   ClapTrap.cpp \
-				   ScavTrap.cpp
+				   ScavTrap.cpp \
+				   FragTrap.cpp
 OBJ				:= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 # COLORS

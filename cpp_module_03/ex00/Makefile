@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/23 15:43:25 by kaye              #+#    #+#              #
-#    Updated: 2021/08/01 18:07:11 by kaye             ###   ########.fr        #
+#    Updated: 2021/08/04 18:36:12 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ DIRS			:= $(OBJ_DIR)
 
 # FILES
 
-NAME			:= fixed
+NAME			:= ClapTrap
 SRC				:= main.cpp \
 				   ClapTrap.cpp
 OBJ				:= $(SRC:%.cpp=$(OBJ_DIR)/%.o)

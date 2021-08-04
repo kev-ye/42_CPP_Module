@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:07:54 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/02 18:47:24 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/04 17:08:28 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 ClapTrap::ClapTrap(void) :
 	_name("Unknow"),
-	_hit_p(100),
-	_energy_p(50),
-	_attack_d(20) {
+	_hit_p(10),
+	_energy_p(10),
+	_attack_d(0) {
 	std::cout << "\e[1;35mClapTrap\e[0m default constructor" << std::endl;
 	return ;
 }
 
 ClapTrap::ClapTrap(std::string name) :
 	_name(name),
-	_hit_p(100),
-	_energy_p(50),
-	_attack_d(20) {
+	_hit_p(10),
+	_energy_p(10),
+	_attack_d(0) {
 	std::cout << "\e[1;35mClapTrap\e[0m named parameter constructor" << std::endl;
 	return ;
 }
@@ -67,12 +67,17 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {
-	std::cout << "[\e[1;32m" << this->_name \
-		<< "\e[0m] Repairing ... He get [\e[1;33m"
-		<< amount << "\e[0m] hit points! And [\e[1;33m" \
-		<< amount << "\e[0m] energy points!" << std::endl;
-	this->_hit_p += amount;
-	this->_energy_p += amount;
+	if (this->_hit_p > 0) {
+		std::cout << "[\e[1;32m" << this->_name \
+			<< "\e[0m] Repairing ... He get [\e[1;33m"
+			<< amount << "\e[0m] hit points! And [\e[1;33m" \
+			<< amount << "\e[0m] energy points!" << std::endl;
+		this->_hit_p += amount;
+		this->_energy_p += amount;
+	}
+	else
+		std::cout << "[\e[1;32m" << this->_name \
+			<< "\e[0m] can't be repaired because it's died!" << std::endl;
 }
 
 int	ClapTrap::getAttackDamage(void) {

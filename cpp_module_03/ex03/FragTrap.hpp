@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 12:30:15 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/04 17:11:46 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/05 15:30:42 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class FragTrap : virtual public ClapTrap {
 		FragTrap(void);
 		FragTrap(std::string name);
 		FragTrap(FragTrap const & src);
-		~FragTrap(void);
+		virtual ~FragTrap(void);
 	
 		FragTrap & operator=(FragTrap const & rhs);
 

@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/23 15:43:25 by kaye              #+#    #+#              #
-#    Updated: 2021/08/05 12:27:30 by kaye             ###   ########.fr        #
+#    Updated: 2021/08/05 15:16:12 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,10 @@ DIRS			:= $(OBJ_DIR)
 # FILES
 
 NAME			:= polymorphism
-SRC				:= main.cpp
+SRC				:= main.cpp \
+				   Animal.cpp \
+				   Dog.cpp \
+				   Cat.cpp
 OBJ				:= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 # COLORS

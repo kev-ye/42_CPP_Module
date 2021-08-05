@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:07:54 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/05 12:40:04 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/05 15:28:27 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ClapTrap::attack(std::string const & target) {
 			<< "\e[0m], causing [\e[1;33m" << this->_attack_d \
 			<< "\e[0m] points of damage!";
 		this->_energy_p -= 10;
-		std::cout << " (\e[33m" << this->_energy_p << "\e[0m energy points left)" << std::endl;
+		std::cout << " (\e[0;33m" << this->_energy_p << "\e[0m energy points left)" << std::endl;
 	}
 }
 
@@ -63,7 +63,7 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 		std::cout << "[\e[1;32m" << this->_name << "\e[0m] Die!" << std::endl;
 	else
 		std::cout << "[\e[1;32m" << this->_name << "\e[0m] loss of [\e[1;33m" << amount \
-		<< "\e[0m] hit points! (\e[33m" << this->_hit_p << "\e[0m hit points left)" << std::endl;
+		<< "\e[0m] hit points! (\e[0;33m" << this->_hit_p << "\e[0m hit points left)" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {

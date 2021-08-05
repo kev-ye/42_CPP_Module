@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:07:54 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/04 17:09:59 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/05 12:40:04 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,9 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 			<< "\e[0m] can't be repaired because it's died!" << std::endl;
 }
 
-int	ClapTrap::getAttackDamage(void) {
-	return this->_attack_d;
-}
+int	ClapTrap::getAttackDamage(void) const { return this->_attack_d; }
 
-std::string		ClapTrap::getName(void) {
-	return this->_name;
-}
+std::string		ClapTrap::getName(void) const { return this->_name; }
 
 ClapTrap & ClapTrap::operator=(ClapTrap const & rhs) {
 	if (this != &rhs) {

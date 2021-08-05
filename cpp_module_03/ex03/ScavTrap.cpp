@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 13:02:52 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/05 17:52:36 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/05 19:19:14 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ScavTrap::ScavTrap(void) : ClapTrap("Unknow") {
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
-	std::cout << "\e[1;35mScavTrap\e[0m named parameter constructor" << std::endl;
+	std::cout << "\e[1;36mScavTrap\e[0m named parameter constructor" << std::endl;
 	this->_hit_p = 100;
 	this->_energy_p = 50;
 	this->_attack_d = 20;

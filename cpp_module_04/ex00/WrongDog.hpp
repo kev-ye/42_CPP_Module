@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   WrongDog.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 12:30:15 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/05 17:52:59 by kaye             ###   ########.fr       */
+/*   Created: 2021/08/05 12:45:38 by kaye              #+#    #+#             */
+/*   Updated: 2021/08/05 15:41:36 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef WRONGDOG_HPP
+# define WRONGDOG_HPP
 
-#include "ClapTrap.hpp"
+#include "WrongAnimal.hpp"
 
-class FragTrap : virtual public ClapTrap {
+class WrongDog : public WrongAnimal {
 	public:
-		FragTrap(void);
-		FragTrap(std::string name);
-		FragTrap(FragTrap const & src);
-		virtual ~FragTrap(void);
+		WrongDog(void);
+		WrongDog(WrongDog const & src);
+		virtual ~WrongDog(void);
+
+		WrongDog & operator=(WrongDog const & rhs);
 	
-		FragTrap & operator=(FragTrap const & rhs);
-
 	public:
-		void	highFivesGuys(void);
-
-		void	setHP(void);
-		void	setEP(void);
-		void	setAD(void);
-		
+		void	makeSound(void) const;
 };
-
 
 #endif

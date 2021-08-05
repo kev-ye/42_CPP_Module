@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 12:30:18 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/05 12:56:21 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/05 15:54:16 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Animal::~Animal(void) {
 std::string Animal::getType(void) const { return this->_type; }
 
 void	Animal::makeSound() const {
-	std::cout << "A animal can't make sound!" << std::endl;
+	std::cout << "A Animal can't make sound!" << std::endl;
 }
 
 Animal & Animal::operator=(Animal const & rhs) {

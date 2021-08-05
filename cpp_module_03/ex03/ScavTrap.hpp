@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 13:02:55 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/05 15:30:45 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/05 17:52:43 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ class ScavTrap : virtual public ClapTrap {
 	public:
 		void	attack(std::string const & target);
 		void	guardGate(void);
+
+		void	setHP(void);
+		void	setEP(void);
+		void	setAD(void);
 		
 };
 

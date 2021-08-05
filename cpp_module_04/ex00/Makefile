@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/23 15:43:25 by kaye              #+#    #+#              #
-#    Updated: 2021/08/05 15:16:12 by kaye             ###   ########.fr        #
+#    Updated: 2021/08/05 15:42:02 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,10 @@ NAME			:= polymorphism
 SRC				:= main.cpp \
 				   Animal.cpp \
 				   Dog.cpp \
-				   Cat.cpp
+				   Cat.cpp \
+				   WrongAnimal.cpp \
+				   WrongDog.cpp \
+				   WrongCat.cpp
 OBJ				:= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 # COLORS

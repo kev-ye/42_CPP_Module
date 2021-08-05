@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 13:02:52 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/04 17:11:27 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/05 17:52:36 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ ScavTrap::~ScavTrap(void) {
 	std::cout << "\e[1;36mScavTrap\e[0m destructor" << std::endl;
 	return ;
 }
+
+void	ScavTrap::setHP(void) { this->_hit_p = 100; }
+void	ScavTrap::setEP(void) { this->_energy_p = 50; }
+void	ScavTrap::setAD(void) { this->_attack_d = 20; }
 
 void	ScavTrap::attack(std::string const & target) {
 	if (this->_energy_p <= 0)

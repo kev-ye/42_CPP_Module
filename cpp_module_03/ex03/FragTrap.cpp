@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 12:30:13 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/04 16:56:21 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/05 17:53:30 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ FragTrap::~FragTrap(void) {
 	std::cout << "\e[1;36mFragTrap\e[0m destructor" << std::endl;
 	return ;
 }
+
+void	FragTrap::setHP(void) { this->_hit_p = 100; }
+void	FragTrap::setEP(void) { this->_energy_p = 100; }
+void	FragTrap::setAD(void) { this->_attack_d = 30; }
 
 void	FragTrap::highFivesGuys(void) {
 	std::cout << "FragTrap [\e[1;32m" << this->_name \

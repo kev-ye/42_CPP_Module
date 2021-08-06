@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/05 12:45:38 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/06 18:43:29 by kaye             ###   ########.fr       */
+/*   Created: 2021/08/06 13:02:47 by kaye              #+#    #+#             */
+/*   Updated: 2021/08/06 17:46:32 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-#include "Animal.hpp"
+#include <iostream>
 
-class Dog : public Animal {
+#define NBR_IDEAS 100
+
+class Brain {
 	public:
-		Dog(void);
-		Dog(Dog const & src);
-		virtual ~Dog(void);
+		Brain(void);
+		Brain(Brain const & src);
+		virtual ~Brain(void);
 
-		Dog & operator=(Dog const & rhs);
+		Brain & operator=(Brain const & rhs);
 	
 	public:
-		virtual void	makeSound(void) const;
+		std::string const &	getIdea(int idx) const;
+		void				setIdea(int idx, std::string to_set);
+
+	private:
+		std::string _ideas[NBR_IDEAS];
 };
 
 #endif

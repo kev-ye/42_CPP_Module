@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 13:02:55 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/05 19:12:33 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/06 12:54:23 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ class ScavTrap : virtual public ClapTrap {
 		void	setHP(void);
 		void	setEP(void);
 		void	setAD(void);
-		
 };
 
 #endif

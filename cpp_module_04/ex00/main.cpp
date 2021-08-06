@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 12:26:35 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/05 15:58:22 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/06 12:55:37 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ int main() {
 
 	std::cout << "Dog: " << j->getType() << " " << std::endl;
 	std::cout << "Cat: " << i->getType() << " " << std::endl;
+	std::cout << "Dog: ";
 	j->makeSound();
+	std::cout << "Cat: ";
 	i->makeSound(); //will output the cat sound!
 	meta->makeSound();
 

@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:07:29 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/05 15:29:56 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/07 13:30:35 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ class ClapTrap {
 		int			_hit_p;
 		int			_energy_p;
 		int			_attack_d;
-		int			_old_attck_d;
 };
 
 #endif

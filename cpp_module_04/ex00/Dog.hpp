@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 12:45:38 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/06 18:43:29 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/07 14:14:04 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Dog : public Animal {
 		Dog & operator=(Dog const & rhs);
 	
 	public:
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
 };
 
 #endif

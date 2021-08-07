@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 12:47:23 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/06 18:56:46 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/07 14:41:23 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	Cat::makeSound(void) const {
 	std::cout << "Miaouh miaouh ..." << std::endl;
 }
 
-Brain	*Cat::getBrain(void) {
+Brain	*Cat::getBrain(void) const {
 	return this->_brain;
 }
 

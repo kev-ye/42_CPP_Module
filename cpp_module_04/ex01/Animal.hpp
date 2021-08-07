@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 12:28:02 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/05 15:46:30 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/07 19:37:19 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Animal {
 	public:
 		Animal(void);
-		Animal(std::string type);
+		Animal(std::string const & type);
 		Animal(Animal const & src);
 		virtual ~Animal(void);
 

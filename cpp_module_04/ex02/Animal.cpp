@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 12:30:18 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/07 18:24:19 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/07 19:37:24 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Animal::Animal(void) : _type("Unknow") {
 	return ;
 }
 
-Animal::Animal(std::string type) : _type(type) {
+Animal::Animal(std::string const & type) : _type(type) {
 	std::cout << "\e[1;35mAnimal\e[0m parameter constructor" << std::endl;
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 12:57:40 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/07 18:44:25 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/07 19:38:19 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,6 @@ int main() {
 
 	/* show if leaks */
 	std::cout << "\e[1;32m- if leaks ... -\e[0m\n" << std::endl;
-	system("leaks brain");
+	system("leaks abstract");
 	return (0);
 }

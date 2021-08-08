@@ -6,37 +6,28 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 19:24:34 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/08 12:35:54 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/08 18:06:37 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
-#include "ICharacter.hpp"
 
-AMateria::AMateria(void) {
-	return ;
-}
+AMateria::AMateria(void) : _type("Unknow") {}
 
-AMateria::AMateria(std::string const & type) : _type(type) {
-	return ;
-}
+AMateria::AMateria(std::string const & type) : _type(type) {}
 
-AMateria(AMateria const & src) {
-	*this = src;
-	return ;
-}
+AMateria::AMateria(AMateria const & src) { *this = src; }
 
-AMateria::~AMateria(void) {
-	return ;
-}
+AMateria::~AMateria(void) {}
 
-std::string const &	getType() const {
-	return this->_type;
+std::string const &	AMateria::getType() const { return this->_type; }
+
+void		AMateria::use(ICharacter & target) {
+	std::cout << "AMateria base: " << target.getName() << std::endl;
 }
 
 AMateria &	AMateria::operator=(AMateria const & rhs) {
-	if (this != &src) {
+	if (this != &rhs)
 		this->_type = rhs._type;
-	}
 	return *this;
 }

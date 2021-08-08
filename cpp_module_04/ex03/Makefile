@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/06 12:57:19 by kaye              #+#    #+#              #
-#    Updated: 2021/08/07 19:34:09 by kaye             ###   ########.fr        #
+#    Updated: 2021/08/08 16:11:50 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,11 @@ DIRS			:= $(OBJ_DIR)
 
 NAME			:= interface_recap
 SRC				:= main.cpp \
-				   AMateria.cpp
+				   AMateria.cpp \
+				   Character.cpp \
+				   MateriaSource.cpp \
+				   Ice.cpp \
+				   Cure.cpp
 OBJ				:= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 # COLORS

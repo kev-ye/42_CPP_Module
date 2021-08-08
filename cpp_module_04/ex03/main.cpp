@@ -6,11 +6,14 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 12:57:40 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/07 19:33:54 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/08 18:13:12 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "Character.hpp"
+#include "MateriaSource.hpp"
 
 int main()
 {
@@ -35,5 +38,9 @@ int main()
 	delete me;
 	delete src;
 
+	// system("leaks interface_recap");
 	return 0;
 }
+
+// * shoots an ice bolt at bob *$
+// * heals bob's wounds *$

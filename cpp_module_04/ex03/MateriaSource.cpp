@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 16:53:46 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/08 18:10:47 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/08 19:51:02 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,29 @@ MateriaSource::~MateriaSource(void) {
 }
 
 void		MateriaSource::learnMateria(AMateria * materia) {
+	if (!materia) {
+		std::cout << "\e[1;31m[Error]\e[0mCan't analyze, Materia no exist!" << std::endl;
+		return ;
+	}
+
 	for (int i = 0; i < INVENTORY; i++)
 		if (!this->_materia[i]) {
+			std::cout << "\e[1;33m[Analyzing]\e[0m " << materia->getType() << " ..." << std::endl;
 			this->_materia[i] = materia;
-			break;
+			return ;
 		}
+	delete materia; // if inventory is full, materia can't stock in array, so it will not be free.
+	std::cout << "\e[1;31m[Error]\e[0m Can't analyze" << materia->getType() <<", inventory is full!" << std::endl;
 }
 
 AMateria	*MateriaSource::createMateria(std::string const & type) {
 	for (int i = 0; i < INVENTORY; i++) {
 		if (this->_materia[i] != nullptr && this->_materia[i]->getType() == type) {
+			std::cout << "\e[1;35m[Creating]\e[0m " << this->_materia[i]->getType() << " ..." << std::endl;
 			return this->_materia[i]->clone();
 		}
 	}
+	std::cout << "\e[1;31m[Error]\e[0m Can't create materia [" << type  << "]." << std::endl;
 	return nullptr;
 }
 

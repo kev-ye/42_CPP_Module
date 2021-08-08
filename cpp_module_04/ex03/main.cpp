@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 12:57:40 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/08 18:13:12 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/08 20:05:54 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 #include "Character.hpp"
 #include "MateriaSource.hpp"
 
-int main()
-{
+void test1() {
+	std::cout << "\e[1;32m- Basic test -\e[0m\n" << std::endl;
+
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
@@ -30,7 +31,9 @@ int main()
 	me->equip(tmp);
 
 	ICharacter* bob = new Character("bob");
-	
+
+	std::cout << std::endl;
+
 	me->use(0, *bob);
 	me->use(1, *bob);
 
@@ -38,9 +41,32 @@ int main()
 	delete me;
 	delete src;
 
+	std::cout << std::endl;
+}
+
+void test2() {
+	std::cout << "\e[1;32m- Deep copy test -\e[0m\n" << std::endl;
+	
+	ICharacter		*player1 = new Character("player1");
+	Character		player2 = *(Character *)player1;
+	IMateriaSource	*src = new MateriaSource();
+	AMateria		*tmp;
+
+	src->learnMateria(new Cure());
+	tmp = src->createMateria("cure");
+	player1->equip(tmp);
+
+	player1->use(0, *player1);
+
+	delete player1;
+	delete src;
+}
+
+int main()
+{
+	// test1();
+	test2();
+
 	// system("leaks interface_recap");
 	return 0;
 }
-
-// * shoots an ice bolt at bob *$
-// * heals bob's wounds *$

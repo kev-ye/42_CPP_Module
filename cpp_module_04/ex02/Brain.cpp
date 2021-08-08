@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 13:05:18 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/06 19:06:22 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/08 13:45:07 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ Brain::Brain(void) {
 
 Brain::Brain(Brain const & src) {
 	std::cout << "\e[1;32mBrain\e[0m assignment constructor" << std::endl;
-	*this = src;
+	for (int i = 0; i < NBR_IDEAS; i++)
+			this->_ideas[i] = src._ideas[i];
 	return ;
 }
 
@@ -49,7 +50,7 @@ Brain::~Brain(void) {
 }
 
 std::string const &	Brain::getIdea(int idx) const {
-	if (idx >= NBR_IDEAS)
+	if (idx > NBR_IDEAS)
 		idx = NBR_IDEAS;
 	return this->_ideas[idx];
 }

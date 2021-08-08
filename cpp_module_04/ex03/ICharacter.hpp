@@ -6,12 +6,14 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 19:30:36 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/07 19:32:21 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/08 12:35:38 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
+
+#include <iostream>
 
 class ICharacter
 {

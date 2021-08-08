@@ -6,23 +6,21 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 12:47:23 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/07 18:41:54 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/08 13:55:29 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(void) :
-	Animal("Cat"),
-	_brain(new Brain()) {
+Cat::Cat(void) : Animal("Cat") {
 	std::cout << "\e[1;34mCat\e[0m default constructor" << std::endl;
+	this->_brain = new Brain();
 	return ;
 }
 
-Cat::Cat(Cat const & src) :
-	Animal(src),
-	_brain(new Brain(*(src._brain))) {
+Cat::Cat(Cat const & src) : Animal(src) {
 	std::cout << "\e[1;34mCat\e[0m assignment constructor" << std::endl;
+	this->_brain = new Brain(*(src._brain));
 	return ;
 }
 
@@ -42,6 +40,8 @@ Brain	*Cat::getBrain(void) const {
 
 Cat & Cat::operator=(Cat const & rhs) {
 	if (this != &rhs) {
+		if (this->_brain)
+			delete this->_brain;
 		this->_type = rhs._type;
 		this->_brain = new Brain(*(rhs._brain));
 	}

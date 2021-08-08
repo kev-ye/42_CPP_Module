@@ -6,10 +6,11 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 19:24:34 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/07 19:40:53 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/08 12:35:54 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "AMateria.hpp"
 #include "ICharacter.hpp"
 
 AMateria::AMateria(void) {

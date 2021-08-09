@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:30:05 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/07 14:35:32 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/09 18:37:04 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ DiamondTrap::DiamondTrap(void) :
 	this->FragTrap::setAD();
 };
 
-DiamondTrap::DiamondTrap(std::string name) :
+DiamondTrap::DiamondTrap(std::string const & name) :
 	ClapTrap(name),
 	ScavTrap(name),
 	FragTrap(name),

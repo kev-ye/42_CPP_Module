@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:07:54 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/05 12:40:04 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/09 18:36:15 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ClapTrap::ClapTrap(void) :
 	return ;
 }
 
-ClapTrap::ClapTrap(std::string name) :
+ClapTrap::ClapTrap(std::string const & name) :
 	_name(name),
 	_hit_p(10),
 	_energy_p(10),

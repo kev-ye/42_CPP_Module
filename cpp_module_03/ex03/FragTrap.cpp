@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 12:30:13 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/05 19:19:10 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/09 18:37:13 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ FragTrap::FragTrap(void) : ClapTrap("Unknow") {
 	return ;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name) {
+FragTrap::FragTrap(std::string const & name) : ClapTrap(name) {
 	std::cout << "\e[1;36mFragTrap\e[0m named parameter constructor" << std::endl;
 	this->_hit_p = 100;
 	this->_energy_p = 100;

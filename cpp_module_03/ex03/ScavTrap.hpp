@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 13:02:55 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/07 14:35:38 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/09 18:37:26 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class ScavTrap : virtual public ClapTrap {
 	public:
 		ScavTrap(void);
-		ScavTrap(std::string name);
+		ScavTrap(std::string const & name);
 		ScavTrap(ScavTrap const & src);
 		virtual ~ScavTrap(void);
 	

@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 12:30:15 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/04 13:53:24 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/09 18:36:43 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class FragTrap : public ClapTrap {
 	public:
 		FragTrap(void);
-		FragTrap(std::string name);
+		FragTrap(std::string const & name);
 		FragTrap(FragTrap const & src);
 		~FragTrap(void);
 	

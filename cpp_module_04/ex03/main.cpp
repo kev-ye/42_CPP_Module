@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 12:57:40 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/09 17:36:58 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/09 18:34:14 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,8 +174,6 @@ void test4() {
 	delete unknow;
 	delete player1;
 	delete src;
-
-	std::cout << std::endl;
 }
 
 int main()

@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 15:18:04 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/09 16:53:05 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/09 18:32:45 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class Character : public ICharacter {
 	public:
 		Character(void);
-		Character(std::string name);
+		Character(std::string const & name);
 		Character(Character const & src);
 		virtual ~Character(void);
 

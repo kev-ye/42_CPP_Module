@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 15:18:02 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/09 17:38:22 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/09 18:33:30 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Character::Character(void) : _name("Unknow") {
 	}
 }
 
-Character::Character(std::string name) : _name(name) {
+Character::Character(std::string const & name) : _name(name) {
 	for (int i = 0; i < INVENTORY; i++) {
 		this->_m[i] = nullptr;
 		this->_bag[i] = nullptr;

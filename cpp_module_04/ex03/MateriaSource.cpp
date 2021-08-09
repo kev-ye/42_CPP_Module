@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 16:53:46 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/09 17:13:01 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/09 17:36:07 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void		MateriaSource::learnMateria(AMateria * materia) {
 			this->_materia[i] = materia;
 			return ;
 		}
-	// delete materia; // subj ask we don't do thing ... but if not delete it, we get a leak ...
-	std::cout << "\e[1;31m[Error]\e[0m Can't analyze [" << materia->getType() <<"], inventory is full!" << std::endl;
+	delete materia; // if inventory is full, materia can't stock in memory, so we need delete it.
+	std::cout << "\e[1;31m[Error]\e[0m Can't analyze [" << materia->getType() <<"], source info is full!" << std::endl;
 }
 
 AMateria	*MateriaSource::createMateria(std::string const & type) {

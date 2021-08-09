@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 12:57:40 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/09 17:23:44 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/09 17:36:58 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,17 +116,16 @@ void test3() {
 	src->learnMateria(new Cure());
 	src->learnMateria(new Cure());
 
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	unknow->equip(tmp);
-	tmp = src->createMateria("ice");
-	unknow->equip(tmp);
-	tmp = src->createMateria("cure");
-	unknow->equip(tmp);
-	tmp = src->createMateria("cure");
-	unknow->equip(tmp);
-	tmp = src->createMateria("cure");
-	unknow->equip(tmp);
+	AMateria* tmp1 = src->createMateria("ice");
+	unknow->equip(tmp1);
+	AMateria* tmp2 = src->createMateria("ice");
+	unknow->equip(tmp2);
+	AMateria* tmp3 = src->createMateria("cure");
+	unknow->equip(tmp3);
+	AMateria* tmp4 = src->createMateria("cure");
+	unknow->equip(tmp4);
+	AMateria* tmp5 = src->createMateria("cure");
+	unknow->equip(tmp5);
 
 	std::cout << std::endl;
 
@@ -139,6 +138,7 @@ void test3() {
 	delete unknow;
 	delete player1;
 	delete src;
+	delete tmp5;
 
 	std::cout << std::endl;
 }
@@ -185,7 +185,6 @@ int main()
 	test3();
 	test4();
 
-	/* get some leak in test3() full case, because subj say do nothing if materia is full */
 	// system("leaks interface_recap");
 	return 0;
 }

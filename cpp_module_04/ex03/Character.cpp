@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 15:18:02 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/09 17:23:17 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/09 17:38:22 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,14 @@ void				Character::equip(AMateria *m) {
 			this->_bag[i] = nullptr;
 			return ;
 		}
-	// delete m; // subj ask we don't do thing ... but if not delete it, we get a leak ...
 	std::cout << "\e[1;31m[Error]\e[0m Can't equip [" << m->getType() <<"], inventory is full!" << std::endl;
 }
 
 void				Character::unequip(int idx) {
-	if (idx < 0 || idx >= INVENTORY)
+	if (idx < 0 || idx >= INVENTORY) {
 		std::cout << "e[1;31m[Error]\e[0m Wrong idx!" << std::endl;
+		return ;
+	}
 
 	if (this->_m[idx]) {
 		std::cout << "\e[1;36m[Unequipping]\e[0m " << this->_m[idx]->getType() << "..." << std::endl;
@@ -82,8 +83,10 @@ void				Character::unequip(int idx) {
 }
 
 void				Character::use(int idx, ICharacter & target) {
-	if (idx < 0 || idx >= INVENTORY)
+	if (idx < 0 || idx >= INVENTORY) {
 		std::cout << "\e[1;31m[Error]\e[0m Wrong idx!" << std::endl;
+		return ;
+	}
 
 	if (this->_m[idx])
 		this->_m[idx]->use(target);

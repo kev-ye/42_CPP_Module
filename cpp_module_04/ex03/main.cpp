@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 12:57:40 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/08 20:05:54 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/09 17:23:44 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,26 +47,145 @@ void test1() {
 void test2() {
 	std::cout << "\e[1;32m- Deep copy test -\e[0m\n" << std::endl;
 	
-	ICharacter		*player1 = new Character("player1");
-	Character		player2 = *(Character *)player1;
-	IMateriaSource	*src = new MateriaSource();
+	Character		*player1 = new Character("player1");
+	MateriaSource	*src = new MateriaSource();
 	AMateria		*tmp;
 
+	src->learnMateria(new Ice());
+	tmp = src->createMateria("ice");
+	player1->equip(tmp);
+	tmp = src->createMateria("ice");
+	player1->equip(tmp);
 	src->learnMateria(new Cure());
 	tmp = src->createMateria("cure");
 	player1->equip(tmp);
+	tmp = src->createMateria("cure");
+	player1->equip(tmp);
 
+	std::cout << std::endl;
+	std::cout << "\e[1;32mCOPY: player2 = *player2\e[0m" << std::endl;
+	Character	player2;
+	player2 = *player1;
+
+	std::cout << "player1: " << std::endl;
 	player1->use(0, *player1);
+	player1->use(1, *player1);
+	player1->use(2, *player1);
+	player1->use(3, *player1);
+
+	std::cout << "player2: " << std::endl;
+	player2.use(0, player2);
+	player2.use(1, player2);
+	player2.use(2, player2);
+	player2.use(3, player2);
+
+	std::cout << std::endl;
+	std::cout << "\e[1;32mCHANGE: unequip [2] and [3] of player1\e[0m" << std::endl;
+
+	player1->unequip(2);
+	player1->unequip(3);
+
+	std::cout << "player1: " << std::endl;
+	player1->use(0, *player1);
+	player1->use(1, *player1);
+	player1->use(2, *player1);
+	player1->use(3, *player1);
+
+	std::cout << "player2: " << std::endl;
+	player2.use(0, player2);
+	player2.use(1, player2);
+	player2.use(2, player2);
+	player2.use(3, player2);
 
 	delete player1;
 	delete src;
+
+	std::cout << std::endl;
+}
+
+
+void test3() {
+	std::cout << "\e[1;32m- full case test -\e[0m\n" << std::endl;
+
+	ICharacter* unknow = new Character();
+	ICharacter* player1 = new Character("player1");
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	src->learnMateria(new Cure());
+	src->learnMateria(new Cure());
+
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	unknow->equip(tmp);
+	tmp = src->createMateria("ice");
+	unknow->equip(tmp);
+	tmp = src->createMateria("cure");
+	unknow->equip(tmp);
+	tmp = src->createMateria("cure");
+	unknow->equip(tmp);
+	tmp = src->createMateria("cure");
+	unknow->equip(tmp);
+
+	std::cout << std::endl;
+
+	unknow->use(0, *player1);
+	unknow->use(1, *player1);
+	unknow->use(2, *player1);
+	unknow->use(3, *player1);
+	unknow->use(4, *player1);
+
+	delete unknow;
+	delete player1;
+	delete src;
+
+	std::cout << std::endl;
+}
+
+void test4() {
+	std::cout << "\e[1;32m- unknow materia case test -\e[0m\n" << std::endl;
+
+	ICharacter* unknow = new Character();
+	ICharacter* player1 = new Character("player1");
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	unknow->equip(tmp);
+	tmp = src->createMateria("cure");
+	unknow->equip(tmp);
+	tmp = src->createMateria("unknow");
+	unknow->equip(tmp);
+	tmp = src->createMateria("anything");
+	unknow->equip(tmp);
+
+	std::cout << std::endl;
+
+	unknow->use(0, *player1);
+	unknow->use(1, *player1);
+	unknow->use(2, *player1);
+	unknow->use(3, *player1);
+
+	delete unknow;
+	delete player1;
+	delete src;
+
+	std::cout << std::endl;
 }
 
 int main()
 {
-	// test1();
+	test1();
 	test2();
+	test3();
+	test4();
 
+	/* get some leak in test3() full case, because subj say do nothing if materia is full */
 	// system("leaks interface_recap");
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 16:53:46 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/08 19:51:02 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/09 17:13:01 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,18 @@ MateriaSource::MateriaSource(void) {
 
 MateriaSource::MateriaSource(MateriaSource const & src) {
 	for (int i = 0; i < INVENTORY; i++)
-		this->_materia[i] = src._materia[i]->clone();
+		if (src._materia[i])
+			this->_materia[i] = src._materia[i]->clone();
+		else
+			this->_materia[i] = src._materia[i];
 }
 
 MateriaSource::~MateriaSource(void) {
-	for (int i = 0; i < INVENTORY; i++)
+	for (int i = 0; i < INVENTORY; i++) {
 		if (this->_materia[i] != nullptr)
 			delete this->_materia[i];
+		this->_materia[i] = nullptr;
+	}
 }
 
 void		MateriaSource::learnMateria(AMateria * materia) {
@@ -40,8 +45,8 @@ void		MateriaSource::learnMateria(AMateria * materia) {
 			this->_materia[i] = materia;
 			return ;
 		}
-	delete materia; // if inventory is full, materia can't stock in array, so it will not be free.
-	std::cout << "\e[1;31m[Error]\e[0m Can't analyze" << materia->getType() <<", inventory is full!" << std::endl;
+	// delete materia; // subj ask we don't do thing ... but if not delete it, we get a leak ...
+	std::cout << "\e[1;31m[Error]\e[0m Can't analyze [" << materia->getType() <<"], inventory is full!" << std::endl;
 }
 
 AMateria	*MateriaSource::createMateria(std::string const & type) {
@@ -58,9 +63,12 @@ AMateria	*MateriaSource::createMateria(std::string const & type) {
 MateriaSource &	MateriaSource::operator=(MateriaSource const & rhs) {
 	if (this != &rhs) {
 		for (int i = 0; i < INVENTORY; i++) {
-			if (this->_materia[i] != nullptr)
+			if (this->_materia[i])
 				delete this->_materia[i];
-			this->_materia[i] = rhs._materia[i]->clone();
+			if (rhs._materia[i])
+				this->_materia[i] = rhs._materia[i]->clone();
+			else
+				this->_materia[i] = rhs._materia[i];
 		}
 	}
 	return *this;

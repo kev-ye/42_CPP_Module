@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 15:18:04 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/08 18:04:41 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/09 16:53:05 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,12 @@ class Character : public ICharacter {
 		void				unequip(int idx);
 		void				use(int idx, ICharacter & target);
 
+		AMateria 			*getInventoryMateria(int idx) const;
+
 	private:
 		std::string	_name;
 		AMateria	*_m[INVENTORY];
+		AMateria	*_bag[INVENTORY];
 };
 
 #endif

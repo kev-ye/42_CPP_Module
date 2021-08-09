@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 15:50:40 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/08 19:48:22 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/09 18:54:08 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cure::Cure(Cure const & src) : AMateria(src) {}
 
 Cure::~Cure(void) {}
 
-AMateria	*Cure::clone(void) const { return new Cure(); }
+AMateria	*Cure::clone(void) const { return new Cure(*this); }
 
 void		Cure::use(ICharacter & target) {
 	std::cout << "\e[1;32m* Heals " << target.getName()

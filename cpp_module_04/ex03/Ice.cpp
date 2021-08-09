@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 15:33:37 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/08 19:49:13 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/09 18:53:23 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Ice::Ice(Ice const & src) : AMateria(src) {}
 
 Ice::~Ice(void) {}
 
-AMateria	*Ice::clone(void) const { return new Ice(); }
+AMateria	*Ice::clone(void) const { return new Ice(*this); }
 
 void		Ice::use(ICharacter & target) {
 	std::cout << "\e[1;34m* Shoots an ice at " << target.getName()

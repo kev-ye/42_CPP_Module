@@ -6,14 +6,13 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 15:18:04 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/10 16:34:28 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/10 17:54:11 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	CHARACTER_HPP
 # define CHARACTER_HPP
 
-#include <cstddef>
 #include "ICharacter.hpp"
 
 #define INVENTORY 4

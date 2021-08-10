@@ -6,13 +6,14 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 15:10:07 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/09 18:33:01 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/10 16:34:17 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATERIASOURCE_HPP
 # define MATERIASOURCE_HPP
 
+#include <cstddef>
 #include "IMateriaSource.hpp"
 
 #define INVENTORY 4

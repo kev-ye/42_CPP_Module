@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 13:02:47 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/06 17:46:32 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/10 16:30:27 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define BRAIN_HPP
 
 #include <iostream>
+#include <cstdlib>
 
 #define NBR_IDEAS 100
 

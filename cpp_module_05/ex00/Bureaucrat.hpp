@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 17:54:13 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/09 18:41:23 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/10 15:52:29 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,26 @@
 class Bureaucrat {
 	public:
 		Bureaucrat(void);
-		Bureaucrat(std::string const & name);
+		Bureaucrat(std::string const & name, int const note);
 		Bureaucrat(Bureaucrat const & src);
 		virtual	~Bureaucrat(void);
 
-		Bureaucrat & operator=(Bureaucrat const & rhs);
+		Bureaucrat &	operator=(Bureaucrat const & rhs);
+
+		void			GradeTooHighException(void) const;
+		void			GradeTooLowException(void) const;
+
+	public:
+		std::string const &	getName(void) const;
+		int	const &			getGrade(void) const;
+		void				incGrade(void);
+		void				decGrade(void);
 
 	private:
 		std::string const	_name;
 		int					_note;
 };
 
-
-
+std::ostream & operator<<(std::ostream & o, Bureaucrat const & i);
 
 #endif

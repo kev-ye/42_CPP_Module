@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 12:57:40 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/07 19:38:19 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/10 16:32:53 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,10 @@ int main() {
 	delete copy;
 	std::cout << std::endl;
 
+#if defined(__APPLE__) && defined(__MACH__)
 	/* show if leaks */
 	std::cout << "\e[1;32m- if leaks ... -\e[0m\n" << std::endl;
-	system("leaks abstract");
+	system("leaks brain");
+#endif
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 15:18:02 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/09 18:33:30 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/10 17:38:25 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 Character::Character(void) : _name("Unknow") {
 	for (int i = 0; i < INVENTORY; i++) {
-		this->_m[i] = nullptr;
-		this->_bag[i] = nullptr;
+		this->_m[i] = NULL;
+		this->_bag[i] = NULL;
 	}
 }
 
 Character::Character(std::string const & name) : _name(name) {
 	for (int i = 0; i < INVENTORY; i++) {
-		this->_m[i] = nullptr;
-		this->_bag[i] = nullptr;
+		this->_m[i] = NULL;
+		this->_bag[i] = NULL;
 	}
 }
 
@@ -44,8 +44,8 @@ Character::~Character(void) {
 			delete this->_m[i];
 		if (this->_bag[i])
 			delete this->_bag[i];
-		this->_m[i] = nullptr;
-		this->_bag[i] = nullptr;
+		this->_m[i] = NULL;
+		this->_bag[i] = NULL;
 	}
 }
 
@@ -61,7 +61,7 @@ void				Character::equip(AMateria *m) {
 		if (!this->_m[i]) {
 			std::cout << "\e[1;36m[Equipping]\e[0m " << m->getType() << " ..." << std::endl;
 			this->_m[i] = m;
-			this->_bag[i] = nullptr;
+			this->_bag[i] = NULL;
 			return ;
 		}
 	std::cout << "\e[1;31m[Error]\e[0m Can't equip [" << m->getType() <<"], inventory is full!" << std::endl;
@@ -76,7 +76,7 @@ void				Character::unequip(int idx) {
 	if (this->_m[idx]) {
 		std::cout << "\e[1;36m[Unequipping]\e[0m " << this->_m[idx]->getType() << "..." << std::endl;
 		this->_bag[idx] = this->_m[idx];
-		this->_m[idx] = nullptr;
+		this->_m[idx] = NULL;
 	}
 	else
 		std::cout << "\e[1;31m[Error]\e[0m inventory [" << idx << "] is empty!" << std::endl;
@@ -102,7 +102,7 @@ AMateria			*Character::getInventoryMateria(int idx) const {
 		return this->_bag[idx];
 	else {
 		std::cout << "\e[1;31m[Error]\e[0m bag [" << idx << "] is empty!" << std::endl;
-		return nullptr;
+		return NULL;
 	}
 }
 

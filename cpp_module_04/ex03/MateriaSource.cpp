@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 16:53:46 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/09 17:36:07 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/10 17:38:02 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 MateriaSource::MateriaSource(void) {
 	for (int i = 0; i < INVENTORY; i++)
-		this->_materia[i] = nullptr;
+		this->_materia[i] = NULL;
 }
 
 MateriaSource::MateriaSource(MateriaSource const & src) {
@@ -27,9 +27,9 @@ MateriaSource::MateriaSource(MateriaSource const & src) {
 
 MateriaSource::~MateriaSource(void) {
 	for (int i = 0; i < INVENTORY; i++) {
-		if (this->_materia[i] != nullptr)
+		if (this->_materia[i] != NULL)
 			delete this->_materia[i];
-		this->_materia[i] = nullptr;
+		this->_materia[i] = NULL;
 	}
 }
 
@@ -51,13 +51,13 @@ void		MateriaSource::learnMateria(AMateria * materia) {
 
 AMateria	*MateriaSource::createMateria(std::string const & type) {
 	for (int i = 0; i < INVENTORY; i++) {
-		if (this->_materia[i] != nullptr && this->_materia[i]->getType() == type) {
+		if (this->_materia[i] != NULL && this->_materia[i]->getType() == type) {
 			std::cout << "\e[1;35m[Creating]\e[0m " << this->_materia[i]->getType() << " ..." << std::endl;
 			return this->_materia[i]->clone();
 		}
 	}
 	std::cout << "\e[1;31m[Error]\e[0m Can't create materia [" << type  << "]." << std::endl;
-	return nullptr;
+	return NULL;
 }
 
 MateriaSource &	MateriaSource::operator=(MateriaSource const & rhs) {

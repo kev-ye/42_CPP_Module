@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 17:54:17 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/11 18:21:25 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/11 18:21:01 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,15 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs) {
 	if (this == &rhs) return *this;
 
 	std::string *tmp_name = (std::string *)&this->_name;
-	
+
 	*tmp_name = rhs._name;
 	this->_note = rhs._note;
 	return *this;
 }
 
-std::ostream & operator<<(std::ostream & o, Bureaucrat const & i) {
-	o << "[\e[1;36m" << i.getName() << "\e[0m], bureaucrat grade [\e[1;36m"
-		<< i.getGrade() << "\e[0m].";
+std::ostream & operator<<(std::ostream & o, Bureaucrat const & Bureaucrat) {
+	o << "[\e[1;36m" << Bureaucrat.getName() << "\e[0m], bureaucrat grade [\e[1;36m"
+		<< Bureaucrat.getGrade() << "\e[0m].";
 	return o;
 }
 

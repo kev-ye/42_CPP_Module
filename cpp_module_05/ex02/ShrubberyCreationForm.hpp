@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 14:34:45 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/13 18:10:30 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/13 19:12:55 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ class ShrubberyCreationForm : public Form {
 
 	private:
 		std::string const	_target;
-
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 17:54:17 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/11 18:21:01 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/13 13:48:16 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Bureaucrat::Bureaucrat(std::string const & name, int const note) : _name(name) {
 		this->_note = note;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const & src) : _name(src._name) { *this = src; }
+Bureaucrat::Bureaucrat(Bureaucrat const & src) : _name(src.getName()) { *this = src; }
 
 Bureaucrat::~Bureaucrat(void) {}
 
@@ -32,8 +32,8 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs) {
 
 	std::string *tmp_name = (std::string *)&this->_name;
 
-	*tmp_name = rhs._name;
-	this->_note = rhs._note;
+	*tmp_name = rhs.getName();
+	this->_note = rhs.getGrade();
 	return *this;
 }
 
@@ -61,10 +61,22 @@ void	Bureaucrat::decGrade(void) {
 		++this->_note;
 }
 
+void	Bureaucrat::signForm(Form & form) {
+	try {
+		form.beSigned(*this);
+		std::cout << "[\e[1;36m" << this->getName() << "\e[0m] signs [\e[1;36m" \
+			<< form.getName() << "\e[0m]." << std::endl;
+	}
+	catch (std::exception & e) {
+		std::cout << "[\e[1;36m" <<this->getName() << "\e[0m] cannot sign because " \
+			<< e.what() << std::endl; 
+	}
+}
+
 char const *	Bureaucrat::GradeTooHighException::what() const throw() {
-	return "\e[1;31mGrate Too High Exception!\e[0m";
+	return "\e[1;31mGrate Too High!\e[0m";
 }
 
 char const *	Bureaucrat::GradeTooLowException::what() const throw() {
-	return "\e[1;31mGrate Too Low Exception!\e[0m";
+	return "\e[1;31mGrate Too Low!\e[0m";
 }

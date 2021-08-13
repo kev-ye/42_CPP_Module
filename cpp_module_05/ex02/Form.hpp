@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 15:22:41 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/13 19:04:21 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/13 19:04:49 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ class Form {
 		void				setFormSign(bool sign);
 
 		void	beSigned(Bureaucrat const & Bureaucrat);
-		
+
+		virtual void execute(Bureaucrat const & executor) const = 0;
 
 	private:
 		std::string const	_name;

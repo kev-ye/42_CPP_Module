@@ -6,12 +6,15 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 17:53:18 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/13 18:42:35 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/13 18:59:43 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 void test1(void) {
 	std::cout << "\e[1;32m- Basic test -\e[0m" << std::endl;
@@ -38,7 +41,7 @@ void test1(void) {
 }
 
 void test2(void) {
-	std::cout << "\e[1;32m- Assignment test -\e[0m" << std::endl;
+	std::cout << "\e[1;32m- Basic test -\e[0m" << std::endl;
 
 	Bureaucrat bureaucrat1("bureaucrat1", 100);
 	std::cout << "bureaucrat1: ";
@@ -135,9 +138,11 @@ void test4(void) {
 }
 
 int main() {
-	test1();
-	test2();
-	test3();
-	test4();
+	// test1();
+	// test2();
+	// test3();
+	// test4();
+
+
 	return (0);
 }

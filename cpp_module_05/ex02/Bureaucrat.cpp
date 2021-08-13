@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 17:54:17 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/13 18:26:07 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/13 19:12:19 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,15 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs) {
 	if (this == &rhs) return *this;
 
 	std::string *tmp_name = (std::string *)&this->_name;
-	
+
 	*tmp_name = rhs.getName();
 	this->_note = rhs.getGrade();
 	return *this;
 }
 
-std::ostream & operator<<(std::ostream & o, Bureaucrat const & i) {
-	o << "[\e[1;36m" << i.getName() << "\e[0m], bureaucrat grade [\e[1;36m"
-		<< i.getGrade() << "\e[0m].";
+std::ostream & operator<<(std::ostream & o, Bureaucrat const & Bureaucrat) {
+	o << "[\e[1;36m" << Bureaucrat.getName() << "\e[0m], bureaucrat grade [\e[1;36m"
+		<< Bureaucrat.getGrade() << "\e[0m].";
 	return o;
 }
 
@@ -61,10 +61,34 @@ void	Bureaucrat::decGrade(void) {
 		++this->_note;
 }
 
+void	Bureaucrat::signForm(Form & form) {
+	try {
+		form.beSigned(*this);
+		std::cout << "[\e[1;36m" << this->getName() << "\e[0m] signs [\e[1;36m" \
+			<< form.getName() << "\e[0m]." << std::endl;
+	}
+	catch (std::exception & e) {
+		std::cout << "[\e[1;36m" <<this->getName() << "\e[0m] cannot sign because " \
+			<< e.what() << std::endl; 
+	}
+}
+
+void	Bureaucrat::executeForm(Form const & form) {
+	try {
+		form.execute(*this);
+		std::cout << "[\e[1;36m" << this->getName() << "\e[0m] execute [\e[1;36m" \
+			<< form.getName() << "\e[0m]." << std::endl;
+	}
+	catch (std::exception & e) {
+		std::cout << "[\e[1;36m" <<this->getName() << "\e[0m] cannot execute [\e[1;36m" \
+			<< form.getName() << "\e[0m], because "<< e.what() << std::endl; 
+	}
+}
+
 char const *	Bureaucrat::GradeTooHighException::what() const throw() {
-	return "\e[1;31mGrate Too High Exception!\e[0m";
+	return "\e[1;31mGrate Too High!\e[0m";
 }
 
 char const *	Bureaucrat::GradeTooLowException::what() const throw() {
-	return "\e[1;31mGrate Too Low Exception!\e[0m";
+	return "\e[1;31mGrate Too Low!\e[0m";
 }

@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 15:22:39 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/13 18:41:13 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/13 13:53:58 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ Form::Form(std::string const & name, int const signGrade, int const execGrade) :
 Form::Form(Form const & src) :
 	_name(src.getName()),
 	_signGrade(src.getSignGrade()),
-	_execGrade(src.getExecGrade()) {
+	_execGrade(src.getExecGrade()),
+	_formSign(src.getFormSign()) {
 	*this = src;
 }
 

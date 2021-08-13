@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 17:53:18 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/11 18:38:01 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/13 14:09:08 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,24 @@ void test1(void) {
 }
 
 void test2(void) {
+	std::cout << "\e[1;32m- Assignment test -\e[0m" << std::endl;
+
+	Bureaucrat bureaucrat1("bureaucrat1", 1);
+	std::cout << "bureaucrat1: ";
+	std::cout << bureaucrat1 << std::endl;
+
+	Bureaucrat bureaucrat2("bureaucrat2", 150);
+	std::cout << "bureaucrat2: ";
+	std::cout << bureaucrat2 << std::endl;
+
+	bureaucrat1 = bureaucrat2;
+	std::cout << "B1 = B2:     ";
+	std::cout << bureaucrat1 << std::endl;
+
+	std::cout << std::endl;
+}
+
+void test3(void) {
 	std::cout << "\e[1;32m- Exception true case test -\e[0m" << std::endl;
 
 	try {
@@ -64,7 +82,7 @@ void test2(void) {
 	std::cout << std::endl;
 }
 
-void test3(void) {
+void test4(void) {
 	std::cout << "\e[1;32m- Exception false case test -\e[0m" << std::endl;
 
 	try {
@@ -112,5 +130,6 @@ int main() {
 	test1();
 	test2();
 	test3();
+	test4();
 	return (0);
 }

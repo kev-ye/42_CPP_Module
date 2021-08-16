@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 15:22:39 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/16 17:03:55 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 17:05:16 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ Form::Form(std::string const & name, int const signGrade, int const execGrade) :
 Form::Form(Form const & src) :
 	_name(src.getName()),
 	_signGrade(src.getSignGrade()),
-	_execGrade(src.getExecGrade()) {
+	_execGrade(src.getExecGrade()),
+	_formSign(src.getFormSign()) {
 	*this = src;
 }
 
@@ -79,4 +80,8 @@ char const	*Form::GradeTooHighException::what() const throw() {
 
 char const	*Form::GradeTooLowException::what() const throw() {
 	return "\e[1;31mGrade Too Low!\e[0m";
+}
+
+char const	*Form::NotSignedException::what() const throw() {
+	return "\e[1;31mForm Is Not Signed!\e[0m";
 }

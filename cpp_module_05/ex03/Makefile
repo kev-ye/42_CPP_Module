@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/09 17:53:53 by kaye              #+#    #+#              #
-#    Updated: 2021/08/16 16:35:01 by kaye             ###   ########.fr        #
+#    Updated: 2021/08/16 18:43:03 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,8 @@ SRC				:= main.cpp \
 				   Form.cpp \
 				   ShrubberyCreationForm.cpp \
 				   RobotomyRequestForm.cpp \
-				   PresidentialPardonForm.cpp
+				   PresidentialPardonForm.cpp \
+				   Intern.cpp
 OBJ				:= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 # COLORS

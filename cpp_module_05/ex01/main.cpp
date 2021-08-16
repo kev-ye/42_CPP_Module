@@ -6,11 +6,10 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 17:53:18 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/16 13:50:34 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 18:45:08 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
 #include "Form.hpp"
 
 void test1(void) {

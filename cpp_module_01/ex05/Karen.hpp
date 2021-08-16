@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 18:38:42 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/30 13:47:31 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 17:55:21 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,6 @@
 # define KAREN_HPP
 
 #include <iostream>
-
-enum	e_complain {
-	e_DEBUG = 0,
-	e_INFO,
-	e_WARNING,
-	e_ERROR,
-	e_COMPLAIN
-};
 
 class Karen {
 	public:
@@ -41,4 +33,11 @@ class Karen {
 		void	(Karen::*_complain[4])(void);
 };
 
+enum	e_complain {
+	e_DEBUG = 0,
+	e_INFO,
+	e_WARNING,
+	e_ERROR,
+	e_COMPLAIN
+};
 #endif

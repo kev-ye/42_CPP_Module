@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 17:56:48 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/01 14:56:45 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 17:14:09 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ Point::~Point(void) {
 }
 
 Point & Point::operator=(Point const & rhs) {
+	if (this == &rhs) return *this;
+
 	Fixed *x = (Fixed *)&this->_x;
 	Fixed *y = (Fixed *)&this->_y;
 
-	if (this != &rhs) {
-		*x = rhs._x;
-		*y = rhs._y;
-	}
+	*x = rhs._x;
+	*y = rhs._y;
 	return *this;
 }
 

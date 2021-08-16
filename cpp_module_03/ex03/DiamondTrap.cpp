@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:30:05 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/09 18:37:04 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 17:15:47 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ DiamondTrap::~DiamondTrap(void) {
 }
 
 DiamondTrap & DiamondTrap::operator=(DiamondTrap const & rhs) {
-	if (this != &rhs) {
-		this->_name = rhs._name;
-		this->_hit_p = rhs._hit_p;
-		this->_energy_p = rhs._energy_p;
-		this->_attack_d = rhs._attack_d;
-	}
+	if (this == &rhs) return *this;
+	
+	this->_name = rhs._name;
+	this->_hit_p = rhs._hit_p;
+	this->_energy_p = rhs._energy_p;
+	this->_attack_d = rhs._attack_d;
 	return *this;
 }
 

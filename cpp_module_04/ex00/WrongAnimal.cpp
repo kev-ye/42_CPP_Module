@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 12:30:18 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/07 19:37:09 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 17:17:04 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	WrongAnimal::makeSound() const {
 }
 
 WrongAnimal & WrongAnimal::operator=(WrongAnimal const & rhs) {
-	if (this != &rhs) {
-		this->_type = rhs._type;
-	}
+	if (this == &rhs) return *this;
+
+	this->_type = rhs._type;
 	return *this;
 }

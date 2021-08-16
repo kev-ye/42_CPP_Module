@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 17:36:06 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/31 18:27:58 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 17:12:21 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,9 @@ int Fixed::toInt(void) const {
 */
 Fixed & Fixed::operator=(Fixed const & rhs) {
 	std::cout << "Assignation operator called" << std::endl;
-	if (this != &rhs)
-		this->setRawBits(rhs.getRawBits());
+	if (this == &rhs) return *this;
+	
+	this->setRawBits(rhs.getRawBits());
 	return *this;
 }
 

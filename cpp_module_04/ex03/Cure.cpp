@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 15:50:40 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/09 18:54:08 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 17:19:18 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void		Cure::use(ICharacter & target) {
 }
 
 Cure &	Cure::operator=(Cure const & rhs) {
-	if (this != &rhs)
-		AMateria::operator=(rhs);
+	if (this == &rhs) return *this;
+	
 	return *this;
 }

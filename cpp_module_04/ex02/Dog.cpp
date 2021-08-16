@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 12:47:23 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/08 14:03:56 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 17:18:43 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ Brain	*Dog::getBrain(void) const {
 }
 
 Dog & Dog::operator=(Dog const & rhs) {
-	if (this != &rhs) {
-		if (this->_brain)
-			delete this->_brain;
-		this->_type = rhs._type;
-		this->_brain = new Brain(*(rhs._brain));
-	}
+	if (this == &rhs) return *this;
+	
+	if (this->_brain)
+		delete this->_brain;
+	this->_type = rhs._type;
+	this->_brain = new Brain(*(rhs._brain));
 	return *this;
 }

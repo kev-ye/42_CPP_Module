@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 12:30:18 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/08 12:38:52 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 17:16:35 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	Animal::makeSound() const {
 }
 
 Animal & Animal::operator=(Animal const & rhs) {
-	if (this != &rhs) {
-		this->_type = rhs._type;
-	}
+	if (this == &rhs) return *this;
+	
+	this->_type = rhs._type;
 	return *this;
 }

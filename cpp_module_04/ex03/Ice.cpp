@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 15:33:37 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/09 18:53:23 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 17:19:31 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void		Ice::use(ICharacter & target) {
 }
 
 Ice &	Ice::operator=(Ice const & rhs) {
-	if (this != &rhs)
-		AMateria::operator=(rhs);
+	if (this == &rhs) return *this;
+
 	return *this;
 }

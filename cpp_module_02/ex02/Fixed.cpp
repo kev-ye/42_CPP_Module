@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 14:33:45 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/02 16:18:06 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 17:12:48 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,9 @@ Fixed & 				Fixed::max(Fixed & a, Fixed & b) {
 ** OPERATORS
 */
 Fixed & Fixed::operator=(Fixed const & rhs) {
-	if (this != &rhs)
-		this->setRawBits(rhs.getRawBits());
+	if (this == &rhs) return *this;
+	
+	this->setRawBits(rhs.getRawBits());
 	return *this;
 }
 

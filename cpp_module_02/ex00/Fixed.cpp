@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 16:53:00 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/31 15:07:11 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 17:12:29 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,9 @@ void	Fixed::setRawBits(int const raw) {
 */
 Fixed &	Fixed::operator=(Fixed const & rhs) {
 	std::cout << "Assignation operator called" << std::endl;
-	if (this != &rhs)
-		this->setRawBits(rhs.getRawBits());
+	if (this == &rhs) return *this;
+	
+	this->setRawBits(rhs.getRawBits());
 	return *this;
 }
 

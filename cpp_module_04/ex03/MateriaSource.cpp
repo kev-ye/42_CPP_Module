@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 16:53:46 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/10 17:38:02 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 17:19:48 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,15 @@ AMateria	*MateriaSource::createMateria(std::string const & type) {
 }
 
 MateriaSource &	MateriaSource::operator=(MateriaSource const & rhs) {
-	if (this != &rhs) {
-		for (int i = 0; i < INVENTORY; i++) {
-			if (this->_materia[i])
-				delete this->_materia[i];
-			if (rhs._materia[i])
-				this->_materia[i] = rhs._materia[i]->clone();
-			else
-				this->_materia[i] = rhs._materia[i];
-		}
+	if (this == &rhs) return *this;
+	
+	for (int i = 0; i < INVENTORY; i++) {
+		if (this->_materia[i])
+			delete this->_materia[i];
+		if (rhs._materia[i])
+			this->_materia[i] = rhs._materia[i]->clone();
+		else
+			this->_materia[i] = rhs._materia[i];
 	}
 	return *this;
 }

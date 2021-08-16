@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 19:24:34 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/08 18:06:37 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 17:18:53 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ void		AMateria::use(ICharacter & target) {
 }
 
 AMateria &	AMateria::operator=(AMateria const & rhs) {
-	if (this != &rhs)
-		this->_type = rhs._type;
+	if (this == &rhs) return *this;
+
+	this->_type = rhs._type;
 	return *this;
 }

@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:07:54 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/09 18:36:55 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 17:15:37 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,11 @@ int	ClapTrap::getAttackDamage(void) const { return this->_attack_d; }
 std::string		ClapTrap::getName(void) const { return this->_name; }
 
 ClapTrap & ClapTrap::operator=(ClapTrap const & rhs) {
-	if (this != &rhs) {
-		this->_name = rhs._name;
-		this->_hit_p = rhs._hit_p;
-		this->_energy_p = rhs._energy_p;
-		this->_attack_d = rhs._attack_d;
-	}
+	if (this == &rhs) return *this;
+	
+	this->_name = rhs._name;
+	this->_hit_p = rhs._hit_p;
+	this->_energy_p = rhs._energy_p;
+	this->_attack_d = rhs._attack_d;
 	return *this;
 }

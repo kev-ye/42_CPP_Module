@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 13:05:18 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/08 13:45:07 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 17:18:25 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ void	Brain::setIdea(int idx, std::string to_set) {
 }
 
 Brain &	Brain::operator=(Brain const & rhs) {
-	if (this != &rhs) {
-		for (int i = 0; i < NBR_IDEAS; i++)
-			this->_ideas[i] = rhs._ideas[i];
-	}
+	if (this == &rhs) return *this;
+
+	for (int i = 0; i < NBR_IDEAS; i++)
+		this->_ideas[i] = rhs._ideas[i];
 	return *this;
 }

@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 15:18:02 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/10 17:38:25 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 17:19:10 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,17 +107,17 @@ AMateria			*Character::getInventoryMateria(int idx) const {
 }
 
 Character &	Character::operator=(Character const & rhs) {
-	if (this != &rhs) {
-		this->_name = rhs.getName();
-		for (int i = 0; i < INVENTORY; i++) {
-			if (this->_m[i])
-				delete this->_m[i];
-			if (rhs._m[i])
-				this->_m[i] = rhs._m[i]->clone();
-			else {
-				this->_m[i] = rhs._m[i];
-				this->_bag[i] = this->_m[i];
-			}
+	if (this == &rhs) return *this;
+
+	this->_name = rhs.getName();
+	for (int i = 0; i < INVENTORY; i++) {
+		if (this->_m[i])
+			delete this->_m[i];
+		if (rhs._m[i])
+			this->_m[i] = rhs._m[i]->clone();
+		else {
+			this->_m[i] = rhs._m[i];
+			this->_bag[i] = this->_m[i];
 		}
 	}
 	return *this;

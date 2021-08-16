@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 12:57:40 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/10 17:39:32 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 17:23:02 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,6 +183,10 @@ int main()
 	test3();
 	test4();
 
-	// system("leaks interface_recap");
+#if defined(__APPLE__) && defined(__MACH__)
+	/* show if leaks */
+	std::cout << "\e[1;32m- if leaks ... -\e[0m\n" << std::endl;
+	system("leaks interface_recap");
+#endif
 	return 0;
 }

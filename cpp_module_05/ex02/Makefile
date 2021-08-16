@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/09 17:53:53 by kaye              #+#    #+#              #
-#    Updated: 2021/08/13 18:12:27 by kaye             ###   ########.fr        #
+#    Updated: 2021/08/16 16:07:16 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ DIRS			:= $(OBJ_DIR)
 
 # FILES
 
-NAME			:= form
+NAME			:= forms
 SRC				:= main.cpp \
 				   Bureaucrat.cpp \
 				   Form.cpp \
@@ -60,6 +60,7 @@ clean:
 
 fclean: clean
 	@rm -Rf $(NAME)
+	@rm -Rf *_shrubbery
 	@echo "$(B_RED)$(NAME)$(NONE)  -> $(B_GREEN)Delete$(NONE)"
 
 re: fclean all

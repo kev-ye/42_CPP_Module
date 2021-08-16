@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 15:22:39 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/13 13:53:58 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 13:44:00 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,8 @@ char const	*Form::GradeTooHighException::what() const throw() {
 
 char const	*Form::GradeTooLowException::what() const throw() {
 	return "\e[1;31mGrade Too Low!\e[0m";
+}
+
+char const	*Form::NotSignedException::what() const throw() {
+	return "\e[1;31mForm Is Not Signed!\e[0m";
 }

@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 15:22:41 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/13 19:04:21 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 13:42:10 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ class Form {
 	public:
 		class GradeTooHighException : public std::exception {
 			public:
-				virtual char const*	what() const throw();
+				virtual char const	*what() const throw();
 		};
 		class GradeTooLowException : public std::exception {
 			public:
-				virtual char const*	what() const throw();
+				virtual char const	*what() const throw();
 		};
 };
 

@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 17:53:18 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/13 18:42:35 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 13:50:34 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void test3(void) {
 		bureaucrat1.signForm(form1);
 	}
 	catch (std::exception & e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	std::cout << std::endl;
@@ -93,7 +93,7 @@ void test4(void) {
 	}
 	catch (std::exception & e) {
 		std::cout << "\"form1\", -1, -1:         ";
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	try {
@@ -101,7 +101,7 @@ void test4(void) {
 	}
 	catch (std::exception & e) {
 		std::cout << "\"form2\", -1, 100:        ";
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	try {
@@ -109,7 +109,7 @@ void test4(void) {
 	}
 	catch (std::exception & e) {
 		std::cout << "\"form3\", 151, 151:       ";
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	try {
@@ -117,7 +117,7 @@ void test4(void) {
 	}
 	catch (std::exception & e) {
 		std::cout << "\"form4\", 1, 151:         ";
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	try {
@@ -128,7 +128,7 @@ void test4(void) {
 		form.beSigned(bureaucrat);
 	}
 	catch (std::exception & e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	std::cout << std::endl;

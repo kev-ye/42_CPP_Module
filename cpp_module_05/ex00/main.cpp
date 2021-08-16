@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 17:53:18 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/13 14:09:08 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 13:50:17 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void test3(void) {
 		std::cout << bureaucrat1 << std::endl;
 	}
 	catch (std::exception & e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	try {
@@ -76,7 +76,7 @@ void test3(void) {
 		std::cout << bureaucrat2 << std::endl;
 	}
 	catch (std::exception & e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	std::cout << std::endl;
@@ -92,7 +92,7 @@ void test4(void) {
 	}
 	catch (std::exception & e) {
 		std::cout << "1 -> 0:     ";
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	try {
@@ -101,7 +101,7 @@ void test4(void) {
 	}
 	catch (std::exception & e) {
 		std::cout << "-1:         ";
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	try {
@@ -111,7 +111,7 @@ void test4(void) {
 	}
 	catch (std::exception & e) {
 		std::cout << "150 -> 151: ";
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	try {
@@ -120,7 +120,7 @@ void test4(void) {
 	}
 	catch (std::exception & e) {
 		std::cout << "152:        ";
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	std::cout << std::endl;

@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 14:34:45 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/13 19:12:55 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 16:21:28 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 #include <iostream>
+#include <fstream>
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
@@ -33,6 +34,12 @@ class ShrubberyCreationForm : public Form {
 
 	private:
 		std::string const	_target;
+
+	public:
+		class OpenFileFailedException : public std::exception {
+			public:
+				virtual char const	*what() const throw();
+		};
 };
 
 #endif

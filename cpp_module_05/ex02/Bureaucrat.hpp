@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 17:54:13 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/13 19:06:12 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 13:42:18 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ class Bureaucrat {
 	public:
 		class GradeTooHighException : public std::exception {
 			public:
-				virtual char const *	what() const throw();
+				virtual char const	*what() const throw();
 		};
 		class GradeTooLowException : public std::exception {
 			public:
-				virtual char const *	what() const throw();
+				virtual char const	*what() const throw();
 		};
 };
 

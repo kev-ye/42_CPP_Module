@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 14:34:44 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/13 18:52:57 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 15:55:56 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,36 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm c
 }
 
 std::string const &	ShrubberyCreationForm::getTarget(void) const { return this->_target; }
+
+void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
+	if (this->getFormSign() == false)
+		throw Form::NotSignedException();
+	if (this->getExecGrade() < executor.getGrade())
+		throw Form::GradeTooLowException();
+
+	std::ifstream ifs("AsciiTree");
+	if (!ifs.is_open())
+		throw ShrubberyCreationForm::OpenFileFailedException();
+
+	std::ofstream ofs(this->_target + "_shrubbery");
+	if (!ofs.is_open())
+		throw ShrubberyCreationForm::OpenFileFailedException();
+
+	std::string contents;
+	do {
+		std::getline(ifs, contents);
+		ofs << contents;
+
+		if (ifs.eof() == true)
+			break ;
+		else
+			ofs << std::endl;
+	} while (true);
+	
+	ifs.close();
+	ofs.close();
+}
+
+char const	*ShrubberyCreationForm::OpenFileFailedException::what() const throw() {
+	return "\e[1;31mOpen File Failed!\e[0m";
+}

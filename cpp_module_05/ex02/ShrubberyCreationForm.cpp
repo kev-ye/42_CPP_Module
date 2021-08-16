@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 14:34:44 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/16 15:55:56 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 20:13:20 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	if (!ifs.is_open())
 		throw ShrubberyCreationForm::OpenFileFailedException();
 
-	std::ofstream ofs(this->_target + "_shrubbery");
+	std::ofstream ofs((this->_target + "_shrubbery").c_str());
 	if (!ofs.is_open())
 		throw ShrubberyCreationForm::OpenFileFailedException();
 

@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 15:19:14 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/30 13:47:12 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/16 20:21:03 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ int main(int ac, char **av) {
 	std::string to_replace(filename);
 	to_replace += ".replace";
 
-	std::ifstream ifs(filename);
+	std::ifstream ifs(filename.c_str());
 	if (!ifs.is_open()) {
 		std::cerr << "open [" << filename << "] failed !" << std::endl;
 		return (1);
 	}
 
-	std::ofstream ofs(to_replace);
+	std::ofstream ofs(to_replace.c_str());
 	if (!ofs.is_open()) {
 		std::cerr << "open [" << to_replace << "] failed !" << std::endl;
 		return (1);

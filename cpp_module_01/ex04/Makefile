@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/23 15:43:25 by kaye              #+#    #+#              #
-#    Updated: 2021/07/29 16:49:19 by kaye             ###   ########.fr        #
+#    Updated: 2021/08/16 20:21:48 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ clean:
 
 fclean: clean
 	@rm -Rf $(NAME)
+	@rm -Rf *.replace
 	@echo "$(B_RED)$(NAME)$(NONE)  -> $(B_GREEN)Delete$(NONE)"
 
 re: fclean all

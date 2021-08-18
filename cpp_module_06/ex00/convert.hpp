@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 15:51:00 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/18 15:53:15 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/18 19:03:55 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,46 @@
 # define CONVERT_HPP
 
 #include <iostream>
+#include <iomanip>
+#include <exception>
+#include <cstdlib>
 
 class Convert {
 	public:
-		Convert(void) {};
-		virtual ~Convert(void) {};
+		Convert(void);
+		Convert(std::string const & str);
+		Convert(Convert const & src);
+		virtual ~Convert(void);
+
+		Convert &	operator=(Convert const &rhs);
+
+		operator char();
+		operator int();
+		operator float();
+		operator double();
+	
+	public:
+		std::string const &	getStr(void) const;
+
+		void	display(void);
+
+		void	printChar(void);
+		void	printInt(void);
+		void	printFloat(void);
+		void	printDouble(void);
+
+	private:
+		std::string _str;
+
+	public:
+		class CantDisplayException : public std::exception {
+			public:
+				virtual char const * what() const throw();
+		};
+		class CantConvertException : public std::exception {
+			public:
+				virtual char const * what() const throw();
+		};
 };
 
 #endif

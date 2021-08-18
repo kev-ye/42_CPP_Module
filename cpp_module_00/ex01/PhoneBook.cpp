@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 16:40:50 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/30 13:41:05 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/18 16:27:40 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ void	PhoneBook::add_contact(void) {
 void	PhoneBook::search_contact(void) const {
 	std::string	tmp;
 	long		index = -1;
+	char 		*ptr = NULL;
 
 	for (int i = 0; i < BOOK_NBR; i++) {
 		if (this->_book[i].info_is_empty() == true) {
@@ -131,16 +132,10 @@ void	PhoneBook::search_contact(void) const {
 	do {
 		std::cout << "To find : ";
 		this->_input_value(tmp);
-		try {
-			index = std::stol(tmp, nullptr, 10);
-		}
-		catch (const std::exception) {
-			std::cout << ANSI_RED"Invalid index !\n" ANSI_NONE << std::endl;
-			continue ;
-		}
+		index = std::strtol(tmp.c_str(), &ptr, 10);
 	
-		if (index < 1 || index > BOOK_NBR) {
-			std::cout << ANSI_RED"Wrong index !\n" ANSI_NONE << std::endl;
+		if (index < 1 || index > BOOK_NBR || tmp.c_str() == ptr) {
+			std::cout << tmp.c_str() << ptr << ANSI_RED"Invalid/Wrong index !\n" ANSI_NONE << std::endl;
 			continue ;
 		}
 		--index;

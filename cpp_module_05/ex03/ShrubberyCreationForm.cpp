@@ -6,18 +6,18 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 14:34:44 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/16 20:13:20 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/17 17:12:45 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(void) :
-	Form("ShrubberyCreationForm", 147, 137),
+	Form("ShrubberyCreationForm", 145, 137),
 	_target("Unknow") {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const & target) :
-	Form("ShrubberyCreationForm", 147, 137),
+	Form("ShrubberyCreationForm", 145, 137),
 	_target(target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src) :

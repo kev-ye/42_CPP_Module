@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 17:46:00 by kaye              #+#    #+#             */
-/*   Updated: 2021/07/30 13:35:46 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/18 16:22:08 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CONTACT_HPP
 
 #include <iostream>
+#include <cstdlib>
 #include <string>
 #include <iomanip>
 

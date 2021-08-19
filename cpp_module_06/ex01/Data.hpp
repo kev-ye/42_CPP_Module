@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 13:01:05 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/19 15:22:35 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/19 17:18:27 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define DATA_HPP
 
 #include <iostream>
+#include <stdint.h>
 
 class Data {
 	public:

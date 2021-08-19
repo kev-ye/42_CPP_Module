@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 14:39:30 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/19 16:04:55 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/19 17:15:16 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <typeinfo>
 
 class Base {
 	public:

@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/09 17:53:53 by kaye              #+#    #+#              #
-#    Updated: 2021/08/19 13:00:56 by kaye             ###   ########.fr        #
+#    Updated: 2021/08/19 13:31:29 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,9 @@ DIRS			:= $(OBJ_DIR)
 
 # FILES
 
-NAME			:= convert
+NAME			:= serialisation
 SRC				:= main.cpp \
-				   Convert.cpp
+				   Data.cpp
 OBJ				:= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 # COLORS

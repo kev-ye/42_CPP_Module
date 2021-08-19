@@ -5,21 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 15:42:39 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/19 13:00:29 by kaye             ###   ########.fr       */
+/*   Created: 2021/08/19 15:39:02 by kaye              #+#    #+#             */
+/*   Updated: 2021/08/19 16:55:57 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.hpp"
-#include <iomanip>
+#include "Base.hpp"
 
-int main(int ac, char **av) {
-	if (ac != 2) {
-		std::cerr << "usage: ./convert [\e[1;31mARGS\e[0m]" << std::endl;
-		return (1);
+int main() {
+	Base *base;
+	
+	srand(time(NULL));
+	for (int i = 0; i < 10; i++) {
+		std::cout << "Test [\e[1;32m" << i + 1 << "\e[0m]: " << std::endl;
+	
+		base = generate();
+		std::cout << "*\e[1;34m";
+		identify_from_pointer(base);
+		std::cout << "\e[0m, &\e[1;36m";
+		identify_from_reference(*base);
+
+		std::cout << "\e[0m\n" << std::endl;
+		delete base;
 	}
-
-	Convert convert(av[1]);
-	convert.display();
 	return (0);
 }

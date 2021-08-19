@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 15:42:39 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/19 13:00:29 by kaye             ###   ########.fr       */
+/*   Created: 2021/08/19 14:39:30 by kaye              #+#    #+#             */
+/*   Updated: 2021/08/19 16:04:55 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.hpp"
-#include <iomanip>
+#ifndef BASE_HPP
+# define BASE_HPP
 
-int main(int ac, char **av) {
-	if (ac != 2) {
-		std::cerr << "usage: ./convert [\e[1;31mARGS\e[0m]" << std::endl;
-		return (1);
-	}
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 
-	Convert convert(av[1]);
-	convert.display();
-	return (0);
-}
+class Base {
+	public:
+		virtual ~Base(void);
+};
+
+class A : public Base {};
+class B : public Base {};
+class C : public Base {};
+
+Base	*generate(void);
+void	identify_from_pointer(Base * p);
+void	identify_from_reference(Base & p);
+
+#endif

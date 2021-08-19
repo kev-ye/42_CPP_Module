@@ -6,11 +6,11 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 15:50:57 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/18 19:06:18 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/19 13:00:35 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "convert.hpp"
+#include "Convert.hpp"
 
 Convert::Convert(void) : _str("0") {}
 

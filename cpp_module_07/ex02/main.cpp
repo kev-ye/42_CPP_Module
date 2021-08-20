@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 16:17:36 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/20 18:36:05 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/20 18:43:24 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,6 +147,7 @@ int main(void) {
 }
 
 // #include <iostream>
+// #include <cstdlib>
 // #include "Array.hpp"
 
 // #define MAX_VAL 750

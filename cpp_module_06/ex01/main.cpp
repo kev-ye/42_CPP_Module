@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 12:44:09 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/19 15:22:47 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/20 13:58:19 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main() {
 	std::cout << std::endl;
 
 	Data *deserializeData = deserialize(serializeData);
-	std::cout << "\e[1;32m- Serialize -\e[0m" << std::endl;
+	std::cout << "\e[1;32m- Deserialize -\e[0m" << std::endl;
 	std::cout << "char: " << deserializeData->getC() << std::endl;
 	std::cout << "int: " << deserializeData->getI() << std::endl;
 	std::cout << "str: " << deserializeData->getStr() << std::endl;

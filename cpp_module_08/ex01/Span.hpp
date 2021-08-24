@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   span.hpp                                           :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 16:55:26 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/22 19:54:20 by kaye             ###   ########.fr       */
+/*   Updated: 2021/08/24 13:04:28 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include <iterator>
 #include <vector>
+#include <ctime>
+#include <cstdlib>
 
 class Span {
 	public:
@@ -35,6 +37,8 @@ class Span {
 		void	addNumber(int nbr);
 		int		shortestSpan(void) const;
 		int		longestSpan(void) const;
+
+		void	generate(int unsigned range);
 
 	private:
 		std::vector<int>	_array;

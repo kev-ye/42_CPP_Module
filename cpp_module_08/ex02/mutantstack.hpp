@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 13:03:04 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/24 19:33:40 by kaye             ###   ########.fr       */
+/*   Updated: 2021/09/08 17:19:07 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class MutantStack : public std::stack<T, Container> {
 	public:
 		MutantStack(void) : std::stack<T, Container>() {};
 		MutantStack(MutantStack const & src) { *this = src; }
-		virtual~MutantStack(void) {};
+		virtual ~MutantStack(void) {};
 
 		MutantStack & operator=(MutantStack const & rhs) {
 			if (this == &rhs) return *this;
@@ -31,6 +31,7 @@ class MutantStack : public std::stack<T, Container> {
 			return *this;
 		}
 
+		/* typedef creates an alias for an existing type, and typename tells the compiler that std[...]::iterator is a type and not a member. */
 		typedef typename std::stack<T, Container>::container_type::iterator iterator;
 		typedef typename std::stack<T, Container>::container_type::reverse_iterator reverse_iterator;
 	

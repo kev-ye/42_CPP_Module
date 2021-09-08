@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 16:55:26 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/24 13:04:28 by kaye             ###   ########.fr       */
+/*   Updated: 2021/09/08 17:35:39 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <iterator>
+#include <algorithm>
 #include <vector>
 #include <ctime>
 #include <cstdlib>

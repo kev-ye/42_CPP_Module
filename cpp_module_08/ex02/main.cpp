@@ -6,14 +6,15 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 13:02:51 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/24 19:34:26 by kaye             ###   ########.fr       */
+/*   Updated: 2021/09/08 18:29:41 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mutantstack.hpp"
+#include <list>
 
 void test1(void) {
-	std::cout << "\e[1;32m- Baisc test -\e[0m" << std::endl;
+	std::cout << "\e[1;32m- MutantStack test -\e[0m" << std::endl;
 	MutantStack<int> mstack;
 	
 	mstack.push(5);
@@ -56,6 +57,40 @@ void test1(void) {
 }
 
 void test2(void) {
+	std::cout << "\e[1;32m- List test -\e[0m" << std::endl;
+	std::list<int> l;
+	
+	l.push_back(5);
+	l.push_back(17);
+	
+	std::cout << "Top: " << l.back() << std::endl;
+
+	l.pop_back();
+
+	std::cout << "Size: " << l.size() << std::endl;
+	
+	l.push_back(3);
+	l.push_back(5);
+	l.push_back(737);
+	//[...]
+	l.push_back(0);
+	
+	std::list<int>::iterator it = l.begin();
+	std::list<int>::iterator ite = l.end();
+
+	++it;
+	--it;
+	std::cout << "list:";
+	while (it != ite) {
+		std::cout << ' ' << *it;
+		++it;
+	}
+	std::cout << std::endl;
+
+	std::cout << std::endl;
+}
+
+void test3(void) {
 	std::cout << "\e[1;32m- stack + iterator full test -\e[0m" << std::endl;
 
 	/* constructor */
@@ -100,5 +135,6 @@ int main()
 {
 	test1();
 	test2();
+	test3();
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 16:40:50 by kaye              #+#    #+#             */
-/*   Updated: 2021/08/18 16:27:40 by kaye             ###   ########.fr       */
+/*   Updated: 2021/10/17 13:40:57 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,7 @@ void	PhoneBook::search_contact(void) const {
 		index = std::strtol(tmp.c_str(), &ptr, 10);
 	
 		if (index < 1 || index > BOOK_NBR || tmp.c_str() == ptr) {
-			std::cout << tmp.c_str() << ptr << ANSI_RED"Invalid/Wrong index !\n" ANSI_NONE << std::endl;
+			std::cout << ANSI_RED"Invalid/Wrong index !\n"ANSI_NONE << std::endl;
 			continue ;
 		}
 		--index;
